@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="itiran.css">
+    <title>Document</title>
+    <style>
+  :root{
+    --bg:#0b1020;
+    --card:#111a33;
+    --text:#e8ecff;
+    --muted:#aab3d6;
+    --accent:#6ea8ff;
+    --danger:#ff6b6b;
+  }
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: linear-gradient(180deg, var(--bg), #070a14);
+    color: var(--text);
+  }
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  h1,h2{ margin: 8px 0 16px; }
+  p{ color: var(--muted); line-height:1.6; }
+
+  /* ボタン/リンクをボタン化 */
+  .btn, a.btn, button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    text-decoration:none;
+    cursor:pointer;
+    transition: transform .05s ease, background .2s ease;
+  }
+  .btn:hover, a.btn:hover, button:hover{
+    background: rgba(255,255,255,.10);
+  }
+  .btn:active, a.btn:active, button:active{
+    transform: translateY(1px);
+  }
+  .primary{
+    background: rgba(110,168,255,.18);
+    border-color: rgba(110,168,255,.35);
+  }
+  .primary:hover{ background: rgba(110,168,255,.26); }
+
+  /* カード */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .card{
+    background: rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:16px;
+    padding:14px;
+  }
+  .card small{ color: var(--muted); }
+
+  /* クイズ */
+  #question{
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .choices{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .choice{
+    width: 100%;
+    text-align:left;
+  }
+  #result{
+    margin-top: 12px;
+    font-weight: 700;
+  }
+  #explain{
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+  }
+  .hidden{ display:none; }
+
+  /* フッターリンク */
+  .links{
+    margin-top: 18px;
+    display:flex;
+    gap:10px;
+    flex-wrap: wrap;
+  }
+</style>
+</head>
+<body>
+    <div class="menu">
+        <div class="container">
+            <h2>文法</h2>
+            <div class ="menu-card-wrapper">
+                <a href="#" class="menu-card" data-chapter="be">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">be動詞/一般動詞</h3>
+                    </div>
+                </a>
+                <a href="eigo.html" class="menu-card" data-chapter="tense">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">三人称単数現在</h3>
+                    </div>
+                </a>
+                <a href="eigo.html" class="menu-card" data-chapter="modal">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">時制（現在・過去・未来）</h3>
+                    </div>
+                </a>
+                <a href="eigo.html" class="menu-card">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">進行形</h3>
+                    </div>
+                </a>
+                <a href="eigo.html" class="menu-card">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">疑問文／否定文</h3>
+                    </div>
+                </a>
+                <a href="eigo.html" class="menu-card">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">助動詞（can/will/mustなど）</h3>
+                    </div>
+                </a>
+                <a href="eigo.html" class="menu-card">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">不定詞</h3>
+                    </div>
+                </a>
+                <a href="eigo.html" class="menu-card">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">動名詞</h3>
+                    </div>
+                </a>
+                <a href="eigo.html" class="menu-card">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">比較</h3>
+                    </div>
+                </a>
+                <a href="eigo.html" class="menu-card">
+                    <div class="menu-card-inner">
+                        <h3 class="menu-title">受動態</h3>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>

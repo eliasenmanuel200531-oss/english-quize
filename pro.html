@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proにする</title>
+  <style>
+  :root{
+    --bg:#0b1020;
+    --card:#111a33;
+    --text:#e8ecff;
+    --muted:#aab3d6;
+    --accent:#6ea8ff;
+    --danger:#ff6b6b;
+  }
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: linear-gradient(180deg, var(--bg), #070a14);
+    color: var(--text);
+  }
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  h1,h2{ margin: 8px 0 16px; }
+  p{ color: var(--muted); line-height:1.6; }
+
+  /* ボタン/リンクをボタン化 */
+  .btn, a.btn, button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    text-decoration:none;
+    cursor:pointer;
+    transition: transform .05s ease, background .2s ease;
+  }
+  .btn:hover, a.btn:hover, button:hover{
+    background: rgba(255,255,255,.10);
+  }
+  .btn:active, a.btn:active, button:active{
+    transform: translateY(1px);
+  }
+  .primary{
+    background: rgba(110,168,255,.18);
+    border-color: rgba(110,168,255,.35);
+  }
+  .primary:hover{ background: rgba(110,168,255,.26); }
+
+  /* カード */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .card{
+    background: rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:16px;
+    padding:14px;
+  }
+  .card small{ color: var(--muted); }
+
+  /* クイズ */
+  #question{
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .choices{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .choice{
+    width: 100%;
+    text-align:left;
+  }
+  #result{
+    margin-top: 12px;
+    font-weight: 700;
+  }
+  #explain{
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+  }
+  .hidden{ display:none; }
+
+  /* フッターリンク */
+  .links{
+    margin-top: 18px;
+    display:flex;
+    gap:10px;
+    flex-wrap: wrap;
+  }
+</style>
+</head>
+<body>
+ <div class="wrap">
+  <h2>Pro（¥500/月）</h2>
+  <p>無料でも使えるけど、Proにすると「続けるほど強くなる」学習になります。</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Proでできること</h3>
+      <ul>
+        <li>間違えた問題が次回以降も残る（章別）</li>
+        <li>苦手だけを自動で復習できる</li>
+        <li>章別グラフを切り替えられる</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>無料版</h3>
+      <ul>
+        <li>その場の復習はできる</li>
+        <li>でも、間違いは次回に残らない</li>
+      </ul>
+      <small>「毎回同じミスをする」人ほどProが効きます。</small>
+    </div>
+  </div>
+
+  <p style="margin-top:14px;">購入後に届くコードを入力：</p>
+  <input id="code" placeholder="例: PRO-500" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;width:min(420px,100%);" />
+  <button id="btn" class="btn primary">Proを有効化</button>
+
+  <p id="msg"></p>
+
+  <div class="links">
+    <a class="btn" href="itiran.html">章選択へ</a>
+    <a class="btn" href="graph.html">グラフへ</a>
+  </div>
+</div>
+  <script>
+    const PRO_CODE = "PRO-500"; // index.jsと同じにする
+    const msg = document.getElementById("msg");
+
+    document.getElementById("btn").addEventListener("click", () => {
+      const code = document.getElementById("code").value.trim();
+      if (code === PRO_CODE) {
+        localStorage.setItem("isPro", "true");
+        msg.textContent = "Proを有効化しました！";
+      } else {
+        msg.textContent = "コードが違います。";
+      }
+    });
+  </script>
+</body>
+</html>

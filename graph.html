@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>正答率グラフ</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2>正答率の推移</h2>
+
+<div id="proArea"></div>
+<canvas id="rateChart"></canvas>
+<style>
+  :root{
+    --bg:#0b1020;
+    --card:#111a33;
+    --text:#e8ecff;
+    --muted:#aab3d6;
+    --accent:#6ea8ff;
+    --danger:#ff6b6b;
+  }
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: linear-gradient(180deg, var(--bg), #070a14);
+    color: var(--text);
+  }
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  h1,h2{ margin: 8px 0 16px; }
+  p{ color: var(--muted); line-height:1.6; }
+
+  /* ボタン/リンクをボタン化 */
+  .btn, a.btn, button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    text-decoration:none;
+    cursor:pointer;
+    transition: transform .05s ease, background .2s ease;
+  }
+  .btn:hover, a.btn:hover, button:hover{
+    background: rgba(255,255,255,.10);
+  }
+  .btn:active, a.btn:active, button:active{
+    transform: translateY(1px);
+  }
+  .primary{
+    background: rgba(110,168,255,.18);
+    border-color: rgba(110,168,255,.35);
+  }
+  .primary:hover{ background: rgba(110,168,255,.26); }
+
+  /* カード */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .card{
+    background: rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:16px;
+    padding:14px;
+  }
+  .card small{ color: var(--muted); }
+
+  /* クイズ */
+  #question{
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .choices{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .choice{
+    width: 100%;
+    text-align:left;
+  }
+  #result{
+    margin-top: 12px;
+    font-weight: 700;
+  }
+  #explain{
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.10);
+  }
+  .hidden{ display:none; }
+
+  /* フッターリンク */
+  .links{
+    margin-top: 18px;
+    display:flex;
+    gap:10px;
+    flex-wrap: wrap;
+  }
+</style>
+<script>
+  const history = JSON.parse(localStorage.getItem("rateHistory")) || [];
+  const isPro = localStorage.getItem("isPro") === "true";
+
+  // 章一覧（保存済みデータから抽出）
+  const chapters = Array.from(new Set(history.map(h => h.chapter))).filter(Boolean);
+
+  // 無料は be 固定 / Proは選択可
+  let current = "be";
+
+  const proArea = document.getElementById("proArea");
+  if (isPro) {
+    // セレクト生成
+    const sel = document.createElement("select");
+    chapters.forEach(ch => {
+      const opt = document.createElement("option");
+      opt.value = ch;
+      opt.textContent = ch;
+      sel.appendChild(opt);
+    });
+    sel.value = current;
+    sel.addEventListener("change", () => {
+      current = sel.value;
+      draw();
+    });
+    proArea.appendChild(sel);
+  } else {
+    proArea.textContent = "※無料版は be のグラフのみ（Proで全章表示）";
+  }
+
+  const ctx = document.getElementById("rateChart");
+  const chart = new Chart(ctx, {
+    type: "line",
+    data: { labels: [], datasets: [{ label: "正答率(%)", data: [], borderWidth: 2 }] },
+    options: { scales: { y: { min: 0, max: 100 } } }
+  });
+
+  function draw() {
+    const filtered = history.filter(item => item.chapter === current);
+    chart.data.labels = filtered.map(item => item.date);
+    chart.data.datasets[0].data = filtered.map(item => item.rate);
+    chart.data.datasets[0].label = `${current} の正答率(%)`;
+    chart.update();
+  }
+
+  draw();
+</script>
+
+</body>
+</html>
