@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="./index.css">
     <title>Document</title>
     <style>
@@ -71,19 +72,55 @@
   .card small{ color: var(--muted); }
 
   /* クイズ */
-  #question{
-    font-size: 20px;
-    margin-bottom: 14px;
-  }
-  .choices{
-    display:grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .choice{
-    width: 100%;
-    text-align:left;
-  }
+ /* ===== クイズエリア ===== */
+#question {
+  font-size: 22px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* ===== 選択肢 ===== */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.choice {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+/* ホバー */
+.choice:hover {
+  background: rgba(110,168,255,0.2);
+  border-color: rgba(110,168,255,0.5);
+}
+
+/* 押したとき */
+.choice:active {
+  transform: scale(0.98);
+}
+
+/* 正解 */
+.correct {
+  background: rgba(0, 200, 100, 0.25);
+  border-color: rgba(0, 255, 150, 0.6);
+}
+
+/* 不正解 */
+.wrong {
+  background: rgba(255, 0, 0, 0.25);
+  border-color: rgba(255, 0, 0, 0.6);
+}
   #result{
     margin-top: 12px;
     font-weight: 700;
@@ -104,16 +141,32 @@
     gap:10px;
     flex-wrap: wrap;
   }
+@media (max-width: 600px) {
+  #question {
+    font-size: 18px;
+  }
+
+  .choice {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  body {
+    padding: 12px;
+  }
+}
 </style>
 </head>
 <body>
   <p>クリック回数: <span id="">0</span></p>
   <a>あ</a>  
    <p id="question"></p>
- <a class="choice"></a>
- <a class="choice"></a>
- <a class="choice"></a>
- <a class="choice"></a>
+    <div class="choices">
+ <button class="choice"></button>
+ <button class="choice"></button>
+ <button class="choice"></button>
+ <button class="choice"></button>
+ </div>
  <p id="result"></p>
  <p id="explain" class="hidden"></p>
  <button id="nextBtn" style="display:none;">次へ</button>
@@ -124,3 +177,4 @@
 </body>
 
 </html>
+
