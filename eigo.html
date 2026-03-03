@@ -122,11 +122,35 @@
   background: rgba(0, 200, 100, 0.25);
   border-color: rgba(0, 255, 150, 0.6);
 }
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.correct{
+  background: rgba(0, 200, 100, 0.25);
+  border-color: rgba(0, 255, 150, 0.6);
+  animation: pop 0.3s ease;
+}
 
 /* 不正解 */
 .wrong {
   background: rgba(255, 0, 0, 0.25);
   border-color: rgba(255, 0, 0, 0.6);
+}
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.wrong{
+  background: rgba(255, 0, 0, 0.25);
+  border-color: rgba(255, 0, 0, 0.6);
+  animation: shake 0.3s ease;
 }
   #result{
     margin-top: 12px;
@@ -203,6 +227,7 @@
 </body>
 
 </html>
+
 
 
 
