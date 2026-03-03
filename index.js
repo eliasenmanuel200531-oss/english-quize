@@ -109,6 +109,11 @@ if (isQuizPage) {
     const q = questions[getQi()];
     questionEl.textContent = q.question;
     choiceBtns.forEach((b,i)=> b.textContent = q.choices[i]);
+    // 次の問題に進むたびに、選択肢を押せる状態に戻す
+choiceBtns.forEach(b => {
+  b.disabled = false;
+  b.classList.remove("correct", "wrong");
+});
     resultEl.textContent = "";
     explainEl.textContent = "";
     explainEl.classList.add("hidden");
@@ -172,9 +177,7 @@ choiceBtns.forEach(b => {
       }
       reviewIndex = (reviewIndex+1)%reviewQueue.length;
     }
-     btn.classList.add("wrong");
-  // 正解の選択肢も見せる（学習効果UP）
-  choiceBtns[q.answer].classList.add("correct");
+    
     show();
   });
 
@@ -187,5 +190,6 @@ choiceBtns.forEach(b => {
   startChapter(localStorage.getItem("selectedChapter")||"be");
 
 }
+
 
 
