@@ -132,13 +132,22 @@ progressFill.style.width = percent + "%";
       const qi = getQi();
       const q = questions[qi];
 
+      // 連打防止：押したら他も含めて無効化
+choiceBtns.forEach(b => {
+  b.disabled = true;
+  b.classList.remove("correct", "wrong");
+});
       if (i===q.answer){
         resultEl.textContent="〇 正解";
         if (mode==="normal") correctCount++;
         if (mode==="review"){ wrongSet.delete(qi); saveWrong(currentChapter, wrongSet); }
+         btn.classList.add("correct");
       } else {
         resultEl.textContent="× 不正解";
         wrongSet.add(qi); saveWrong(currentChapter, wrongSet);
+         btn.classList.add("wrong");
+  // 正解の選択肢も見せる（学習効果UP）
+  choiceBtns[q.answer].classList.add("correct");
       }
       explainEl.textContent="解説： "+q.explain;
       explainEl.classList.remove("hidden");
@@ -163,6 +172,9 @@ progressFill.style.width = percent + "%";
       }
       reviewIndex = (reviewIndex+1)%reviewQueue.length;
     }
+     btn.classList.add("wrong");
+  // 正解の選択肢も見せる（学習効果UP）
+  choiceBtns[q.answer].classList.add("correct");
     show();
   });
 
@@ -175,4 +187,5 @@ progressFill.style.width = percent + "%";
   startChapter(localStorage.getItem("selectedChapter")||"be");
 
 }
+
 
