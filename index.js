@@ -106,30 +106,44 @@ if (isQuizPage) {
   }
 
   function show() {
-    const q = questions[getQi()];
-    questionEl.textContent = q.question;
-    choiceBtns.forEach((b,i)=> b.textContent = q.choices[i]);
-    // 次の問題に進むたびに、選択肢を押せる状態に戻す
-choiceBtns.forEach(b => {
-  b.disabled = false;
-  b.classList.remove("correct", "wrong");
-});
-    resultEl.textContent = "";
-    explainEl.textContent = "";
-    explainEl.classList.add("hidden");
+  const qi = getQi();
+
+  // ★保険：もし変なindexなら止める（JSが落ちない）
+  if (qi === undefined || qi === null || qi < 0 || qi >= questions.length) {
+    questionEl.textContent = "次の問題が見つかりません（章を選び直してください）";
     nextBtn.style.display = "none";
-
-    progressEl.textContent = `${mode === "normal" ? current + 1 : reviewIndex + 1} / ${
-  mode === "normal" ? questions.length : reviewQueue.length
-} 問`;
-    // 進捗バー更新
-const total = (mode === "normal") ? questions.length : reviewQueue.length;
-const idx = (mode === "normal") ? current : reviewIndex;
-
-// 1問目で0%にならないように +1
-const percent = ((idx + 1) / total) * 100;
-progressFill.style.width = percent + "%";
+    return;
   }
+
+  const q = questions[qi];
+
+  // 問題文
+  questionEl.textContent = q.question;
+
+  // 選択肢（次の問題に進むたびにリセット）
+  choiceBtns.forEach((b, i) => {
+    b.textContent = q.choices[i] ?? "";
+    b.disabled = false;
+    b.classList.remove("correct", "wrong");
+  });
+
+  // 結果・解説リセット
+  resultEl.textContent = "";
+  explainEl.textContent = "";
+  explainEl.classList.add("hidden");
+  nextBtn.style.display = "none";
+
+  // 進捗テキスト
+  const total = (mode === "normal") ? questions.length : reviewQueue.length;
+  const idx = (mode === "normal") ? current : reviewIndex;
+  progressEl.textContent = `${idx + 1} / ${total} 問`;
+
+  // 進捗バー（progressFillがあるときだけ）
+  if (progressFill) {
+    const percent = ((idx + 1) / total) * 100;
+    progressFill.style.width = percent + "%";
+  }
+}
 
   choiceBtns.forEach((btn,i)=>{
     btn.addEventListener("click", e=>{
@@ -190,6 +204,7 @@ choiceBtns.forEach(b => {
   startChapter(localStorage.getItem("selectedChapter")||"be");
 
 }
+
 
 
 
