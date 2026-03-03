@@ -89,6 +89,7 @@ if (isQuizPage) {
   const explainEl = document.getElementById("explain");
   const nextBtn = document.getElementById("nextBtn");
   const reviewBtn = document.getElementById("reviewBtn");
+  const progressEl = document.getElementById("progress");
 
   const getQi = ()=> mode==="normal" ? current : reviewQueue[reviewIndex];
 
@@ -111,6 +112,10 @@ if (isQuizPage) {
     explainEl.textContent = "";
     explainEl.classList.add("hidden");
     nextBtn.style.display = "none";
+
+    progressEl.textContent = `${mode === "normal" ? current + 1 : reviewIndex + 1} / ${
+  mode === "normal" ? questions.length : reviewQueue.length
+} 問`;
   }
 
   choiceBtns.forEach((btn,i)=>{
@@ -160,4 +165,5 @@ if (isQuizPage) {
   });
 
   startChapter(localStorage.getItem("selectedChapter")||"be");
+
 }
