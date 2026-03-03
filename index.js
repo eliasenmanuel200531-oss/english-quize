@@ -90,6 +90,7 @@ if (isQuizPage) {
   const nextBtn = document.getElementById("nextBtn");
   const reviewBtn = document.getElementById("reviewBtn");
   const progressEl = document.getElementById("progress");
+  const progressFill = document.getElementById("progressFill");
 
   const getQi = ()=> mode==="normal" ? current : reviewQueue[reviewIndex];
 
@@ -116,6 +117,13 @@ if (isQuizPage) {
     progressEl.textContent = `${mode === "normal" ? current + 1 : reviewIndex + 1} / ${
   mode === "normal" ? questions.length : reviewQueue.length
 } 問`;
+    // 進捗バー更新
+const total = (mode === "normal") ? questions.length : reviewQueue.length;
+const idx = (mode === "normal") ? current : reviewIndex;
+
+// 1問目で0%にならないように +1
+const percent = ((idx + 1) / total) * 100;
+progressFill.style.width = percent + "%";
   }
 
   choiceBtns.forEach((btn,i)=>{
@@ -167,3 +175,4 @@ if (isQuizPage) {
   startChapter(localStorage.getItem("selectedChapter")||"be");
 
 }
+
