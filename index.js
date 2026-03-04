@@ -211,11 +211,29 @@ if (isQuizPage) {
   const progressEl = document.getElementById("progress");
   const progressFill = document.getElementById("progressFill");
 
-  const getQi = ()=> mode==="normal" ? current : reviewQueue[reviewIndex];
+ const QUIZ_SIZE = 10;      // 1回に出す問題数
+let quizOrder = [];        // 今回出す問題の「元の問題番号」一覧
+
+ const getQi = () => {
+  if (mode === "normal") return quizOrder[current];
+  return reviewQueue[reviewIndex];
+};
 
   function startChapter(ch) {
     currentChapter = ch;
     questions = chapters[ch] || [];
+
+// 今回の10問をランダムに選ぶ（章の問題数が10未満なら全問）
+const allIdx = [...Array(questions.length).keys()];
+
+// シャッフル
+for (let i = allIdx.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [allIdx[i], allIdx[j]] = [allIdx[j], allIdx[i]];
+}
+
+quizOrder = allIdx.slice(0, Math.min(QUIZ_SIZE, questions.length));
+    
     current = 0; correctCount = 0; mode="normal";
     wrongSet = loadWrong(ch);
     reviewQueue = []; reviewIndex = 0;
@@ -298,14 +316,14 @@ choiceBtns.forEach(b => {
     nextBtn.style.display="none";
     if (mode==="normal"){
       current++;
-      if (current>=questions.length){
+      if (current>=quizOrder.length){
         if (wrongSet.size>0){ mode="review"; reviewQueue=[...wrongSet]; reviewIndex=0; }
         else { const r=Math.round(correctCount/questions.length*100); saveRate(r); questionEl.textContent=`終了！ 正答率 ${r}%`; return; }
       }
     } else {
       reviewQueue=[...wrongSet];
       if (reviewQueue.length===0){
-        const r=Math.round(correctCount/questions.length*100); saveRate(r); clearWrong(currentChapter);
+        const r=Math.round(correctCount/quizOrder.length*100); saveRate(r); clearWrong(currentChapter);
         questionEl.textContent=`復習完了！ 正答率 ${r}%`; return;
       }
       reviewIndex = (reviewIndex+1)%reviewQueue.length;
@@ -323,6 +341,7 @@ choiceBtns.forEach(b => {
   startChapter(localStorage.getItem("selectedChapter")||"be");
 
 }
+
 
 
 
