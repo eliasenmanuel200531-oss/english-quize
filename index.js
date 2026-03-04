@@ -116,7 +116,7 @@ if (isMenuPage) {
 // ===== クイズ（eigo.html）=====
 if (isQuizPage) {
   const questionEl = document.getElementById("question");
-  const choiceBtns = document.querySelectorAll(".choice");
+  const choiceBtns = document.querySelectorAll(".choices .choice");
   const resultEl = document.getElementById("result");
   const explainEl = document.getElementById("explain");
   const nextBtn = document.getElementById("nextBtn");
@@ -313,5 +313,6 @@ if (isQuizPage) {
   // 初期開始
   startChapter(localStorage.getItem("selectedChapter") || "be");
 }
+
 
 
