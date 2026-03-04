@@ -1,163 +1,239 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <title>正答率グラフ</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>結果グラフ｜英語クイズ</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --text:#e8ecff;
+      --muted:#aab3d6;
+      --card:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.12);
+      --accent:#6ea8ff;
+    }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #070a14);
+      color: var(--text);
+    }
+    .wrap{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 22px 16px;
+    }
+    h1{ margin: 8px 0 12px; }
+    .muted{ color: var(--muted); }
+    .card{
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+      margin-top:12px;
+    }
+    .row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    select, button, a{
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 10px 12px;
+      text-decoration:none;
+      cursor:pointer;
+    }
+    canvas{
+      width:100%;
+      height:260px;
+      display:block;
+    }
+    table{
+      width:100%;
+      border-collapse: collapse;
+      margin-top:10px;
+      font-size:14px;
+    }
+    th,td{
+      border-bottom:1px solid rgba(255,255,255,.10);
+      padding:10px 6px;
+      text-align:left;
+    }
+    @media (max-width:600px){
+      canvas{ height:220px; }
+      table{ font-size:13px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <h1>結果グラフ</h1>
+    <p class="muted">章ごとの正答率履歴を表示します。</p>
 
-<h2>正答率の推移</h2>
+    <div class="card">
+      <div class="row">
+        <label for="chapterFilter">章：</label>
+        <select id="chapterFilter">
+          <option value="all">全部</option>
+          <option value="be">be動詞</option>
+          <option value="tense">時制</option>
+          <option value="modal">助動詞</option>
+        </select>
 
-<div id="proArea"></div>
-<canvas id="rateChart"></canvas>
-<style>
-  :root{
-    --bg:#0b1020;
-    --card:#111a33;
-    --text:#e8ecff;
-    --muted:#aab3d6;
-    --accent:#6ea8ff;
-    --danger:#ff6b6b;
-  }
-  body{
-    margin:0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    background: linear-gradient(180deg, var(--bg), #070a14);
-    color: var(--text);
-  }
-  .wrap{
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 16px;
-  }
-  h1,h2{ margin: 8px 0 16px; }
-  p{ color: var(--muted); line-height:1.6; }
+        <button id="clearBtn">履歴を削除</button>
+        <a href="./index.html">トップへ</a>
+      </div>
 
-  /* ボタン/リンクをボタン化 */
-  .btn, a.btn, button{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding: 12px 14px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,.12);
-    background: rgba(255,255,255,.06);
-    color: var(--text);
-    text-decoration:none;
-    cursor:pointer;
-    transition: transform .05s ease, background .2s ease;
-  }
-  .btn:hover, a.btn:hover, button:hover{
-    background: rgba(255,255,255,.10);
-  }
-  .btn:active, a.btn:active, button:active{
-    transform: translateY(1px);
-  }
-  .primary{
-    background: rgba(110,168,255,.18);
-    border-color: rgba(110,168,255,.35);
-  }
-  .primary:hover{ background: rgba(110,168,255,.26); }
+      <p id="summary" class="muted" style="margin-top:10px;"></p>
 
-  /* カード */
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 12px;
-    margin-top: 14px;
-  }
-  .card{
-    background: rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:16px;
-    padding:14px;
-  }
-  .card small{ color: var(--muted); }
+      <canvas id="chart" width="900" height="260"></canvas>
+    </div>
 
-  /* クイズ */
-  #question{
-    font-size: 20px;
-    margin-bottom: 14px;
-  }
-  .choices{
-    display:grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .choice{
-    width: 100%;
-    text-align:left;
-  }
-  #result{
-    margin-top: 12px;
-    font-weight: 700;
-  }
-  #explain{
-    margin-top: 10px;
-    padding: 12px;
-    border-radius: 12px;
-    background: rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.10);
-  }
-  .hidden{ display:none; }
+    <div class="card">
+      <h2 style="margin:0 0 8px;">履歴</h2>
+      <table>
+        <thead>
+          <tr><th>日付</th><th>章</th><th>正答率</th></tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </div>
+  </div>
 
-  /* フッターリンク */
-  .links{
-    margin-top: 18px;
-    display:flex;
-    gap:10px;
-    flex-wrap: wrap;
-  }
-</style>
-<script>
-  const history = JSON.parse(localStorage.getItem("rateHistory")) || [];
-  const isPro = localStorage.getItem("isPro") === "true";
+  <script>
+    const chapterLabel = (ch) => {
+      if (ch === "be") return "be動詞";
+      if (ch === "tense") return "時制";
+      if (ch === "modal") return "助動詞";
+      return ch || "-";
+    };
 
-  // 章一覧（保存済みデータから抽出）
-  const chapters = Array.from(new Set(history.map(h => h.chapter))).filter(Boolean);
+    const getHistory = () => JSON.parse(localStorage.getItem("rateHistory")) || [];
 
-  // 無料は be 固定 / Proは選択可
-  let current = "be";
+    function getFiltered(chapter){
+      const h = getHistory();
+      if (chapter === "all") return h;
+      return h.filter(x => x.chapter === chapter);
+    }
 
-  const proArea = document.getElementById("proArea");
-  if (isPro) {
-    // セレクト生成
-    const sel = document.createElement("select");
-    chapters.forEach(ch => {
-      const opt = document.createElement("option");
-      opt.value = ch;
-      opt.textContent = ch;
-      sel.appendChild(opt);
+    function drawLineChart(labels, values){
+      const canvas = document.getElementById("chart");
+      const ctx = canvas.getContext("2d");
+
+      // clear
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+
+      // padding
+      const padL = 42, padR = 12, padT = 14, padB = 34;
+      const W = canvas.width, H = canvas.height;
+      const w = W - padL - padR;
+      const h = H - padT - padB;
+
+      // axes
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = "rgba(255,255,255,.18)";
+      ctx.lineWidth = 1;
+
+      // y grid (0,25,50,75,100)
+      for (let p = 0; p <= 100; p += 25){
+        const y = padT + h - (p/100)*h;
+        ctx.beginPath();
+        ctx.moveTo(padL, y);
+        ctx.lineTo(W - padR, y);
+        ctx.stroke();
+
+        ctx.fillStyle = "rgba(255,255,255,.65)";
+        ctx.font = "12px system-ui";
+        ctx.fillText(String(p), 8, y + 4);
+      }
+
+      if (!values.length){
+        ctx.fillStyle = "rgba(255,255,255,.7)";
+        ctx.font = "16px system-ui";
+        ctx.fillText("履歴がありません", padL, padT + 30);
+        return;
+      }
+
+      // points
+      const n = values.length;
+      const stepX = (n === 1) ? 0 : w/(n-1);
+      const xAt = (i) => padL + i*stepX;
+      const yAt = (v) => padT + h - (v/100)*h;
+
+      // line
+      ctx.strokeStyle = "rgba(110,168,255,.95)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(xAt(0), yAt(values[0]));
+      for (let i=1;i<n;i++){
+        ctx.lineTo(xAt(i), yAt(values[i]));
+      }
+      ctx.stroke();
+
+      // dots
+      for (let i=0;i<n;i++){
+        ctx.fillStyle = "rgba(110,168,255,.95)";
+        ctx.beginPath();
+        ctx.arc(xAt(i), yAt(values[i]), 4, 0, Math.PI*2);
+        ctx.fill();
+      }
+
+      // x labels (最後・真ん中・最初だけ)
+      ctx.fillStyle = "rgba(255,255,255,.75)";
+      ctx.font = "12px system-ui";
+      const showIdx = new Set([0, Math.floor((n-1)/2), n-1]);
+      for (let i=0;i<n;i++){
+        if (!showIdx.has(i)) continue;
+        const text = labels[i] || "";
+        ctx.fillText(text, xAt(i)-18, H-12);
+      }
+    }
+
+    function render(){
+      const select = document.getElementById("chapterFilter");
+      const chapter = select.value;
+
+      const data = getFiltered(chapter);
+
+      // labels / values
+      const labels = data.map(x => x.date);
+      const values = data.map(x => Number(x.rate) || 0);
+
+      // summary
+      const summaryEl = document.getElementById("summary");
+      const best = values.length ? Math.max(...values) : 0;
+      const avg = values.length ? Math.round(values.reduce((a,b)=>a+b,0)/values.length) : 0;
+      summaryEl.textContent =
+        `件数：${values.length} / 最高：${best}% / 平均：${avg}%（${chapter === "all" ? "全部" : chapterLabel(chapter)}）`;
+
+      // table
+      const tbody = document.getElementById("historyBody");
+      tbody.innerHTML = "";
+      data.slice().reverse().forEach(x => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${x.date}</td><td>${chapterLabel(x.chapter)}</td><td>${x.rate}%</td>`;
+        tbody.appendChild(tr);
+      });
+
+      // chart
+      drawLineChart(labels, values);
+    }
+
+    document.getElementById("chapterFilter").addEventListener("change", render);
+
+    document.getElementById("clearBtn").addEventListener("click", ()=>{
+      if (!confirm("履歴を削除しますか？")) return;
+      localStorage.removeItem("rateHistory");
+      render();
     });
-    sel.value = current;
-    sel.addEventListener("change", () => {
-      current = sel.value;
-      draw();
-    });
-    proArea.appendChild(sel);
-  } else {
-    proArea.textContent = "※無料版は be のグラフのみ（Proで全章表示）";
-  }
 
-  const ctx = document.getElementById("rateChart");
-  const chart = new Chart(ctx, {
-    type: "line",
-    data: { labels: [], datasets: [{ label: "正答率(%)", data: [], borderWidth: 2 }] },
-    options: { scales: { y: { min: 0, max: 100 } } }
-  });
-
-  function draw() {
-    const filtered = history.filter(item => item.chapter === current);
-    chart.data.labels = filtered.map(item => item.date);
-    chart.data.datasets[0].data = filtered.map(item => item.rate);
-    chart.data.datasets[0].label = `${current} の正答率(%)`;
-    chart.update();
-  }
-
-  draw();
-</script>
-
+    // 初期表示
+    render();
+  </script>
 </body>
 </html>
