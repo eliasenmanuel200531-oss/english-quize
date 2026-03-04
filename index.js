@@ -211,6 +211,17 @@ if (isQuizPage) {
   const progressEl = document.getElementById("progress");
   const progressFill = document.getElementById("progressFill");
 
+  const shareBtn = document.getElementById("shareBtn");
+
+if (shareBtn){
+  shareBtn.addEventListener("click", ()=>{
+    const text = `英語クイズで ${correctCount} / ${quizOrder.length} 正解！%0Aあなたは何点取れる？`;
+    const url = "https://eliasenmanuel200531-oss.github.io/english-quize/";
+    const tweet = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+    window.open(tweet,"_blank");
+  });
+}
+
  const QUIZ_SIZE = 10;      // 1回に出す問題数
 let quizOrder = [];        // 今回出す問題の「元の問題番号」一覧
 
@@ -342,6 +353,7 @@ choiceBtns.forEach(b => {
       if (reviewQueue.length===0){
         const r=Math.round(correctCount/quizOrder.length*100); saveRate(r); clearWrong(currentChapter);
         questionEl.textContent=`復習完了！ 正答率 ${r}%`; return;
+        document.getElementById("shareBtn").style.display="block";
       }
       reviewIndex = (reviewIndex+1)%reviewQueue.length;
     }
@@ -358,6 +370,7 @@ choiceBtns.forEach(b => {
   startChapter(localStorage.getItem("selectedChapter")||"be");
 
 }
+
 
 
 
