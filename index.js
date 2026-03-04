@@ -271,7 +271,7 @@ quizOrder = allIdx.slice(0, Math.min(QUIZ_SIZE, questions.length));
   nextBtn.style.display = "none";
 
   // 進捗テキスト
-  const total = (mode === "normal") ? questions.length : reviewQueue.length;
+  const total = (mode === "normal") ? quizOrder.length : reviewQueue.length;
   const idx = (mode === "normal") ? current : reviewIndex;
   progressEl.textContent = `${idx + 1} / ${total} 問`;
 
@@ -318,7 +318,7 @@ choiceBtns.forEach(b => {
       current++;
       if (current>=quizOrder.length){
         if (wrongSet.size>0){ mode="review"; reviewQueue=[...wrongSet]; reviewIndex=0; }
-        else { const r=Math.round(correctCount/questions.length*100); saveRate(r); questionEl.textContent=`終了！ 正答率 ${r}%`; return; }
+        else { const r=Math.round(correctCount/quizOrder.length*100); saveRate(r); questionEl.textContent=`終了！ 正答率 ${r}%`; return; }
       }
     } else {
       reviewQueue=[...wrongSet];
@@ -341,6 +341,7 @@ choiceBtns.forEach(b => {
   startChapter(localStorage.getItem("selectedChapter")||"be");
 
 }
+
 
 
 
