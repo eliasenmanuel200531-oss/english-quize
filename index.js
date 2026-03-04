@@ -246,7 +246,7 @@ quizOrder = allIdx.slice(0, Math.min(QUIZ_SIZE, questions.length));
   const qi = getQi();
 
   // ★保険：もし変なindexなら止める（JSが落ちない）
-  if (qi === undefined || qi === null || qi < 0 || qi >= questions.length) {
+  if (qi === undefined || qi === null){
     questionEl.textContent = "次の問題が見つかりません（章を選び直してください）";
     nextBtn.style.display = "none";
     return;
@@ -341,6 +341,7 @@ choiceBtns.forEach(b => {
   startChapter(localStorage.getItem("selectedChapter")||"be");
 
 }
+
 
 
 
