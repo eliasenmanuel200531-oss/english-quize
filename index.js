@@ -10,7 +10,126 @@ const chapters = {
     { question:"You ___ kind.", choices:["am","is","are","be"], answer:2, explain:"You は are" },
     { question:"I ___ not tired.", choices:["am","is","are","be"], answer:0, explain:"I は am" },
     { question:"He ___ not a teacher.", choices:["am","is","are","be"], answer:1, explain:"He は is" },
-    { question:"They ___ not happy.", choices:["am","is","are","be"], answer:2, explain:"They は are" }
+    { question:"They ___ not happy.", choices:["am","is","are","be"], answer:2, explain:"They は are" },
+    { 
+question: "She ___ my sister.",
+choices: ["am", "is", "are", "be"],
+answer: 1
+},
+
+{
+question: "They ___ in the park.",
+choices: ["am", "is", "are", "be"],
+answer: 2
+},
+
+{
+question: "I ___ happy today.",
+choices: ["am", "is", "are", "be"],
+answer: 0
+},
+
+{
+question: "This ___ my book.",
+choices: ["am", "is", "are", "be"],
+answer: 1
+},
+
+{
+question: "We ___ students.",
+choices: ["am", "is", "are", "be"],
+answer: 2
+},
+
+{
+question: "He ___ a teacher.",
+choices: ["am", "is", "are", "be"],
+answer: 1
+},
+
+{
+question: "You ___ very kind.",
+choices: ["am", "is", "are", "be"],
+answer: 2
+},
+
+{
+question: "The dog ___ cute.",
+choices: ["am", "is", "are", "be"],
+answer: 1
+},
+
+{
+question: "I ___ in Japan.",
+choices: ["am", "is", "are", "be"],
+answer: 0
+},
+
+{
+question: "They ___ friends.",
+choices: ["am", "is", "are", "be"],
+answer: 2
+},
+
+{
+question: "She ___ busy today.",
+choices: ["am", "is", "are", "be"],
+answer: 1
+},
+
+{
+question: "We ___ ready.",
+choices: ["am", "is", "are", "be"],
+answer: 2
+},
+
+{
+question: "I ___ not tired.",
+choices: ["am", "is", "are", "be"],
+answer: 0
+},
+
+{
+question: "He ___ at school.",
+choices: ["am", "is", "are", "be"],
+answer: 1
+},
+
+{
+question: "They ___ very tall.",
+choices: ["am", "is", "are", "be"],
+answer: 2
+},
+
+{
+question: "This ___ a pen.",
+choices: ["am", "is", "are", "be"],
+answer: 1
+},
+
+{
+question: "I ___ a soccer fan.",
+choices: ["am", "is", "are", "be"],
+answer: 0
+},
+
+{
+question: "We ___ in the classroom.",
+choices: ["am", "is", "are", "be"],
+answer: 2
+},
+
+{
+question: "She ___ my friend.",
+choices: ["am", "is", "are", "be"],
+answer: 1
+},
+
+{
+question: "You ___ a good student.",
+choices: ["am", "is", "are", "be"],
+answer: 2
+}
   ],
   tense: [
     { question:"I ___ to school every day.", choices:["go","went","will go","gone"], answer:0, explain:"every day → 現在形 go" },
@@ -204,6 +323,7 @@ choiceBtns.forEach(b => {
   startChapter(localStorage.getItem("selectedChapter")||"be");
 
 }
+
 
 
 
