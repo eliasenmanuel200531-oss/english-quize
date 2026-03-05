@@ -31,7 +31,92 @@ const chapters = {
     { question:"I ___ a soccer fan.", choices:["am","is","are","be"], answer:0, explain:"I は am" },
     { question:"We ___ in the classroom.", choices:["am","is","are","be"], answer:2, explain:"We は are" },
     { question:"She ___ my friend.", choices:["am","is","are","be"], answer:1, explain:"She は is" },
-    { question:"You ___ a good student.", choices:["am","is","are","be"], answer:2, explain:"You は are" }
+    { question:"You ___ a good student.", choices:["am","is","are","be"], answer:2, explain:"You は are" },
+  { question:"I ___ a student.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"He ___ busy today.", choices:["am","is","are","be"], answer:1, explain:"He → is" },
+  { question:"They ___ my friends.", choices:["am","is","are","be"], answer:2, explain:"They → are" },
+  { question:"She ___ from Japan.", choices:["am","is","are","be"], answer:1, explain:"She → is" },
+  { question:"We ___ ready now.", choices:["am","is","are","be"], answer:2, explain:"We → are" },
+  { question:"It ___ a cat.", choices:["am","is","are","be"], answer:1, explain:"It → is" },
+  { question:"You ___ kind.", choices:["am","is","are","be"], answer:2, explain:"You → are" },
+  { question:"I ___ not tired.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"He ___ not a teacher.", choices:["am","is","are","be"], answer:1, explain:"He → is" },
+  { question:"They ___ not happy.", choices:["am","is","are","be"], answer:2, explain:"They → are" },
+
+  { question:"This ___ my book.", choices:["am","is","are","be"], answer:1, explain:"This → is" },
+  { question:"That ___ your pen.", choices:["am","is","are","be"], answer:1, explain:"That → is" },
+  { question:"These ___ my shoes.", choices:["am","is","are","be"], answer:2, explain:"These → are" },
+  { question:"Those ___ your bags.", choices:["am","is","are","be"], answer:2, explain:"Those → are" },
+  { question:"My name ___ Ken.", choices:["am","is","are","be"], answer:1, explain:"My name → is" },
+  { question:"Her name ___ Sara.", choices:["am","is","are","be"], answer:1, explain:"Her name → is" },
+  { question:"Their names ___ on the list.", choices:["am","is","are","be"], answer:2, explain:"names → are" },
+  { question:"I ___ in Tokyo.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"She ___ at home.", choices:["am","is","are","be"], answer:1, explain:"She → is" },
+  { question:"We ___ in the classroom.", choices:["am","is","are","be"], answer:2, explain:"We → are" },
+
+  { question:"He ___ a doctor.", choices:["am","is","are","be"], answer:1, explain:"He → is" },
+  { question:"They ___ students.", choices:["am","is","are","be"], answer:2, explain:"They → are" },
+  { question:"You ___ my best friend.", choices:["am","is","are","be"], answer:2, explain:"You → are" },
+  { question:"It ___ cold today.", choices:["am","is","are","be"], answer:1, explain:"It → is" },
+  { question:"I ___ happy now.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"She ___ very busy.", choices:["am","is","are","be"], answer:1, explain:"She → is" },
+  { question:"We ___ excited.", choices:["am","is","are","be"], answer:2, explain:"We → are" },
+  { question:"They ___ in the park.", choices:["am","is","are","be"], answer:2, explain:"They → are" },
+  { question:"This ___ a pen.", choices:["am","is","are","be"], answer:1, explain:"This → is" },
+  { question:"Those ___ my books.", choices:["am","is","are","be"], answer:2, explain:"Those → are" },
+
+  { question:"I ___ a soccer fan.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"He ___ my brother.", choices:["am","is","are","be"], answer:1, explain:"He → is" },
+  { question:"She ___ my sister.", choices:["am","is","are","be"], answer:1, explain:"She → is" },
+  { question:"We ___ good friends.", choices:["am","is","are","be"], answer:2, explain:"We → are" },
+  { question:"You ___ a good student.", choices:["am","is","are","be"], answer:2, explain:"You → are" },
+  { question:"It ___ a new phone.", choices:["am","is","are","be"], answer:1, explain:"It → is" },
+  { question:"I ___ in a hurry.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"He ___ not at school.", choices:["am","is","are","be"], answer:1, explain:"He → is" },
+  { question:"They ___ not hungry.", choices:["am","is","are","be"], answer:2, explain:"They → are" },
+  { question:"She ___ not here.", choices:["am","is","are","be"], answer:1, explain:"She → is" },
+
+  { question:"Are you ___ okay?", choices:["am","is","are","be"], answer:3, explain:"be動詞の原形は be" },
+  { question:"I want to ___ a teacher.", choices:["am","is","are","be"], answer:3, explain:"to + 動詞の原形 → be" },
+  { question:"I will ___ happy.", choices:["am","is","are","be"], answer:3, explain:"will + 原形 → be" },
+  { question:"Can you ___ quiet?", choices:["am","is","are","be"], answer:3, explain:"can + 原形 → be" },
+  { question:"She must ___ tired.", choices:["am","is","are","be"], answer:3, explain:"must + 原形 → be" },
+
+  // ---- ここから量産（同じルールで100まで）----
+  { question:"I ___ a beginner.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"He ___ a nice guy.", choices:["am","is","are","be"], answer:1, explain:"He → is" },
+  { question:"They ___ very kind.", choices:["am","is","are","be"], answer:2, explain:"They → are" },
+  { question:"She ___ a singer.", choices:["am","is","are","be"], answer:1, explain:"She → is" },
+  { question:"We ___ in the library.", choices:["am","is","are","be"], answer:2, explain:"We → are" },
+  { question:"It ___ my turn.", choices:["am","is","are","be"], answer:1, explain:"It → is" },
+  { question:"You ___ late today.", choices:["am","is","are","be"], answer:2, explain:"You → are" },
+  { question:"I ___ not sleepy.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"He ___ not busy now.", choices:["am","is","are","be"], answer:1, explain:"He → is" },
+  { question:"They ___ not alone.", choices:["am","is","are","be"], answer:2, explain:"They → are" },
+
+  { question:"This ___ my desk.", choices:["am","is","are","be"], answer:1, explain:"This → is" },
+  { question:"That ___ a dog.", choices:["am","is","are","be"], answer:1, explain:"That → is" },
+  { question:"These ___ my keys.", choices:["am","is","are","be"], answer:2, explain:"These → are" },
+  { question:"Those ___ your glasses.", choices:["am","is","are","be"], answer:2, explain:"Those → are" },
+  { question:"My hobby ___ music.", choices:["am","is","are","be"], answer:1, explain:"hobby → is" },
+  { question:"Her favorite food ___ sushi.", choices:["am","is","are","be"], answer:1, explain:"food → is" },
+  { question:"Our plans ___ simple.", choices:["am","is","are","be"], answer:2, explain:"plans → are" },
+  { question:"I ___ in my room.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"She ___ at the station.", choices:["am","is","are","be"], answer:1, explain:"She → is" },
+  { question:"We ___ at the mall.", choices:["am","is","are","be"], answer:2, explain:"We → are" },
+
+  { question:"He ___ a student too.", choices:["am","is","are","be"], answer:1, explain:"He → is" },
+  { question:"They ___ from China.", choices:["am","is","are","be"], answer:2, explain:"They → are" },
+  { question:"You ___ my teacher.", choices:["am","is","are","be"], answer:2, explain:"You → are" },
+  { question:"It ___ sunny today.", choices:["am","is","are","be"], answer:1, explain:"It → is" },
+  { question:"I ___ ready.", choices:["am","is","are","be"], answer:0, explain:"I → am" },
+  { question:"She ___ strong.", choices:["am","is","are","be"], answer:1, explain:"She → is" },
+  { question:"We ___ hungry.", choices:["am","is","are","be"], answer:2, explain:"We → are" },
+  { question:"They ___ tired.", choices:["am","is","are","be"], answer:2, explain:"They → are" },
+  { question:"This ___ an apple.", choices:["am","is","are","be"], answer:1, explain:"This → is" },
+  { question:"Those ___ new shoes.", choices:["am","is","are","be"], answer:2, explain:"Those → are" }
+
+  // --- 残りは「同じ型」を増やすだけ（あなたの作り方でOK）---
   ],
 
   tense: [
@@ -313,6 +398,7 @@ if (isQuizPage) {
   // 初期開始
   startChapter(localStorage.getItem("selectedChapter") || "be");
 }
+
 
 
 
