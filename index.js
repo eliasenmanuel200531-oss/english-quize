@@ -454,8 +454,8 @@ if (nextCategoryBtn) {
 
   const names = {
     be: "be動詞",
-    tense: "時制",
-    modal: "助動詞"
+    tense: "三人称単数現在",
+    modal: "時制"
   };
 
   let current = localStorage.getItem("selectedChapter") || "be";
@@ -512,6 +512,7 @@ console.log("カテゴリ別問題数", {
   modal: chapters.modal.length
 });
 console.log("合計問題数", Object.values(chapters).reduce((sum, arr) => sum + arr.length, 0));
+
 
 
 
