@@ -188,6 +188,42 @@ const chapters = {
 { question:"My sister ___ very hard.", choices:["study","studies","studied","studying"], answer:1, explain:"study → studies" },
 { question:"Ken ___ his dog.", choices:["walk","walks","walked","walking"], answer:1, explain:"Ken → walks" },
 { question:"She ___ English books.", choices:["read","reads","reading","readed"], answer:1, explain:"She → reads" },
+    // ===== 三人称単数現在 追加30問 =====
+{ question:"He ___ baseball on Saturdays.", choices:["play","plays","played","playing"], answer:1, explain:"He → plays" },
+{ question:"She ___ her homework every night.", choices:["do","does","did","doing"], answer:1, explain:"She → does" },
+{ question:"My father ___ to work by train.", choices:["go","goes","went","going"], answer:1, explain:"father → goes" },
+{ question:"Ken ___ English after dinner.", choices:["study","studies","studied","studying"], answer:1, explain:"study → studies" },
+{ question:"Tom ___ TV in the evening.", choices:["watch","watches","watched","watching"], answer:1, explain:"watch → watches" },
+
+{ question:"She ___ the piano every day.", choices:["practice","practices","practiced","practicing"], answer:1, explain:"She → practices" },
+{ question:"He ___ lunch at school.", choices:["eat","eats","ate","eating"], answer:1, explain:"He → eats" },
+{ question:"My sister ___ very fast.", choices:["run","runs","ran","running"], answer:1, explain:"sister → runs" },
+{ question:"The dog ___ in the park.", choices:["play","plays","played","playing"], answer:1, explain:"dog(It) → plays" },
+{ question:"She ___ coffee every morning.", choices:["drink","drinks","drank","drinking"], answer:1, explain:"She → drinks" },
+
+{ question:"He ___ to music at night.", choices:["listen","listens","listened","listening"], answer:1, explain:"listen → listens" },
+{ question:"My mother ___ breakfast at 7.", choices:["make","makes","made","making"], answer:1, explain:"mother → makes" },
+{ question:"Tom ___ his room every week.", choices:["clean","cleans","cleaned","cleaning"], answer:1, explain:"Tom → cleans" },
+{ question:"She ___ books in the library.", choices:["read","reads","reading","readed"], answer:1, explain:"She → reads" },
+{ question:"He ___ his dog every morning.", choices:["walk","walks","walked","walking"], answer:1, explain:"He → walks" },
+
+{ question:"My brother ___ in Chiba.", choices:["live","lives","lived","living"], answer:1, explain:"live → lives" },
+{ question:"She ___ math at school.", choices:["teach","teaches","taught","teaching"], answer:1, explain:"teach → teaches" },
+{ question:"He ___ the window every day.", choices:["open","opens","opened","opening"], answer:1, explain:"He → opens" },
+{ question:"The teacher ___ many questions.", choices:["ask","asks","asked","asking"], answer:1, explain:"teacher → asks" },
+{ question:"She ___ to the station by bus.", choices:["go","goes","went","going"], answer:1, explain:"go → goes" },
+
+{ question:"He ___ rice for breakfast.", choices:["eat","eats","ate","eating"], answer:1, explain:"He → eats" },
+{ question:"My friend ___ English very well.", choices:["speak","speaks","spoke","speaking"], answer:1, explain:"friend → speaks" },
+{ question:"She ___ the guitar after school.", choices:["play","plays","played","playing"], answer:1, explain:"She → plays" },
+{ question:"He ___ the newspaper every morning.", choices:["read","reads","reading","readed"], answer:1, explain:"He → reads" },
+{ question:"Tom ___ to school with Ken.", choices:["go","goes","went","going"], answer:1, explain:"Tom → goes" },
+
+{ question:"She ___ the dishes after dinner.", choices:["wash","washes","washed","washing"], answer:1, explain:"wash → washes" },
+{ question:"He ___ his desk every day.", choices:["clean","cleans","cleaned","cleaning"], answer:1, explain:"He → cleans" },
+{ question:"My sister ___ hard for tests.", choices:["study","studies","studied","studying"], answer:1, explain:"study → studies" },
+{ question:"Ken ___ his bike to school.", choices:["ride","rides","rode","riding"], answer:1, explain:"Ken → rides" },
+{ question:"She ___ letters to her friend.", choices:["write","writes","wrote","writing"], answer:1, explain:"She → writes" }
   
   ],
 
@@ -585,6 +621,7 @@ console.log("カテゴリ別問題数", {
   modal: chapters.modal.length
 });
 console.log("合計問題数", Object.values(chapters).reduce((sum, arr) => sum + arr.length, 0));
+
 
 
 
