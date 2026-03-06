@@ -223,7 +223,19 @@ const chapters = {
 { question:"He ___ his desk every day.", choices:["clean","cleans","cleaned","cleaning"], answer:1, explain:"He → cleans" },
 { question:"My sister ___ hard for tests.", choices:["study","studies","studied","studying"], answer:1, explain:"study → studies" },
 { question:"Ken ___ his bike to school.", choices:["ride","rides","rode","riding"], answer:1, explain:"Ken → rides" },
-{ question:"She ___ letters to her friend.", choices:["write","writes","wrote","writing"], answer:1, explain:"She → writes" }
+{ question:"She ___ letters to her friend.", choices:["write","writes","wrote","writing"], answer:1, explain:"She → writes" },
+    // ===== 三人称単数現在 追加10問 =====
+{ question:"He ___ the bus to school.", choices:["take","takes","took","taking"], answer:1, explain:"He → takes" },
+{ question:"She ___ her grandmother every Sunday.", choices:["visit","visits","visited","visiting"], answer:1, explain:"She → visits" },
+{ question:"My father ___ the newspaper every morning.", choices:["read","reads","reading","readed"], answer:1, explain:"father → reads" },
+{ question:"Tom ___ his shoes at the door.", choices:["leave","leaves","left","leaving"], answer:1, explain:"Tom → leaves" },
+{ question:"Ken ___ his face before breakfast.", choices:["wash","washes","washed","washing"], answer:1, explain:"wash → washes" },
+
+{ question:"She ___ the answer quickly.", choices:["find","finds","found","finding"], answer:1, explain:"She → finds" },
+{ question:"He ___ his bike in the garage.", choices:["keep","keeps","kept","keeping"], answer:1, explain:"He → keeps" },
+{ question:"My sister ___ her lunch at school.", choices:["finish","finishes","finished","finishing"], answer:1, explain:"sister → finishes" },
+{ question:"The teacher ___ the door at 8:00.", choices:["close","closes","closed","closing"], answer:1, explain:"teacher → closes" },
+{ question:"She ___ pictures in her notebook.", choices:["draw","draws","drew","drawing"], answer:1, explain:"She → draws" }
   
   ],
 
@@ -669,6 +681,7 @@ console.log("カテゴリ別問題数", {
   modal: chapters.modal.length
 });
 console.log("合計問題数", Object.values(chapters).reduce((sum, arr) => sum + arr.length, 0));
+
 
 
 
