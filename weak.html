@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>あなたの弱点ランキング</title>
+
+<style>
+
+body{
+font-family:system-ui;
+background:#0b1020;
+color:white;
+padding:30px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+}
+
+.card{
+background:#111a33;
+padding:20px;
+border-radius:12px;
+margin-bottom:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>あなたの弱点ランキング</h1>
+
+<div id="list"></div>
+
+<a href="itiran.html">クイズに戻る</a>
+
+</div>
+
+<script src="index.js"></script>
+
+<script>
+
+const list = document.getElementById("list");
+
+const keys = Object.keys(localStorage)
+.filter(k=>k.startsWith("wrong_"));
+
+if(keys.length===0){
+
+list.innerHTML="<p>まだ弱点はありません</p>";
+
+}else{
+
+keys.forEach(k=>{
+
+let data = JSON.parse(localStorage.getItem(k));
+
+let chapter = k.replace("wrong_","");
+
+let div=document.createElement("div");
+
+div.className="card";
+
+div.innerHTML=`${chapter}：${data.length}問 苦手`;
+
+list.appendChild(div);
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
