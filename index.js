@@ -682,6 +682,17 @@ console.log("カテゴリ別問題数", {
 });
 console.log("合計問題数", Object.values(chapters).reduce((sum, arr) => sum + arr.length, 0));
 
+function startDailyQuiz(){
+
+const chapters = ["be","tense","modal"];
+
+const random = chapters[Math.floor(Math.random()*chapters.length)];
+
+localStorage.setItem("selectedChapter",random);
+
+location.href="eigo.html";
+
+}
 
 
 
