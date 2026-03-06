@@ -398,23 +398,26 @@ if (isQuizPage) {
   // 初期開始
   startChapter(localStorage.getItem("selectedChapter") || "be");
 }
+
 const nextCategoryBtn = document.getElementById("nextCategoryBtn");
 
-if(nextCategoryBtn){
+if (nextCategoryBtn) {
 
-nextCategoryBtn.addEventListener("click",()=>{
+  nextCategoryBtn.addEventListener("click", () => {
 
-const order = ["be","tense","modal"];
+    const order = ["be", "tense", "modal"];
 
-let currentIndex = order.indexOf(currentChapter);
+    let current = localStorage.getItem("selectedChapter") || "be";
 
-let next = order[(currentIndex+1)%order.length];
+    let currentIndex = order.indexOf(current);
 
-localStorage.setItem("selectedChapter",next);
+    let next = order[(currentIndex + 1) % order.length];
 
-location.reload();
+    localStorage.setItem("selectedChapter", next);
 
-});
+    location.reload();
+
+  });
 
 }
 
