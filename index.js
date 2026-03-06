@@ -225,7 +225,43 @@ const chapters = {
   { question:"I ___ my homework yet.", choices:["didn't finish","haven't finished","don't finish","won't finish"], answer:1, explain:"yet → 現在完了（否定）" },
   { question:"She ___ already ___ dinner.", choices:["has / eaten","have / ate","is / eat","will / ate"], answer:0, explain:"already → has eaten" },
   { question:"We ___ to the station now.", choices:["go","went","are going","will go"], answer:2, explain:"now → are going" },
-  { question:"They ___ to Kyoto next week.", choices:["go","went","will go","are went"], answer:2, explain:"next week → will go" }
+  { question:"They ___ to Kyoto next week.", choices:["go","went","will go","are went"], answer:2, explain:"next week → will go" },
+    // ===== 時制追加30問 =====
+{ question:"He ___ soccer every day.", choices:["play","plays","played","playing"], answer:1, explain:"every day → 現在形" },
+{ question:"She ___ to school yesterday.", choices:["goes","went","will go","going"], answer:1, explain:"yesterday → 過去形" },
+{ question:"I ___ my homework tomorrow.", choices:["do","did","will do","doing"], answer:2, explain:"tomorrow → will do" },
+{ question:"They ___ lunch now.", choices:["eat","ate","are eating","will eat"], answer:2, explain:"now → 現在進行形" },
+{ question:"We ___ TV when he came home.", choices:["watch","watched","were watching","will watch"], answer:2, explain:"when he came home → 過去進行形" },
+
+{ question:"He ___ already finished.", choices:["has","have","had","will"], answer:0, explain:"He → has" },
+{ question:"I ___ never seen that movie.", choices:["have","has","had","will"], answer:0, explain:"I → have seen" },
+{ question:"She ___ in Tokyo since 2020.", choices:["lives","lived","has lived","will live"], answer:2, explain:"since → 現在完了" },
+{ question:"They ___ for two hours.", choices:["study","studied","have studied","will study"], answer:2, explain:"for two hours → 現在完了" },
+{ question:"By next year, he ___ graduated.", choices:["will","will have","has","had"], answer:1, explain:"By next year → 未来完了" },
+
+{ question:"I ___ breakfast every morning.", choices:["eat","ate","will eat","eating"], answer:0, explain:"every morning → 現在形" },
+{ question:"She ___ a letter last night.", choices:["writes","wrote","will write","writing"], answer:1, explain:"last night → 過去形" },
+{ question:"We ___ to Kyoto next week.", choices:["go","went","will go","going"], answer:2, explain:"next week → 未来形" },
+{ question:"He ___ a book now.", choices:["reads","read","is reading","will read"], answer:2, explain:"now → 現在進行形" },
+{ question:"They ___ dinner at 7 yesterday.", choices:["have","had","will have","having"], answer:1, explain:"yesterday → 過去形" },
+
+{ question:"She ___ English since she was young.", choices:["studies","studied","has studied","will study"], answer:2, explain:"since → 現在完了" },
+{ question:"I ___ him tomorrow.", choices:["see","saw","will see","seeing"], answer:2, explain:"tomorrow → 未来形" },
+{ question:"We ___ when the phone rang.", choices:["sleep","slept","were sleeping","will sleep"], answer:2, explain:"rang の時進行中 → 過去進行形" },
+{ question:"He ___ to school by bus every day.", choices:["go","goes","went","will go"], answer:1, explain:"every day → 現在形" },
+{ question:"She ___ her room yesterday.", choices:["cleans","cleaned","will clean","cleaning"], answer:1, explain:"yesterday → 過去形" },
+
+{ question:"I ___ already eaten lunch.", choices:["have","has","had","will"], answer:0, explain:"I → have eaten" },
+{ question:"Tom ___ soccer tomorrow.", choices:["plays","played","will play","playing"], answer:2, explain:"tomorrow → will play" },
+{ question:"My father ___ TV now.", choices:["watch","watched","is watching","will watch"], answer:2, explain:"now → 現在進行形" },
+{ question:"They ___ in the park when it started to rain.", choices:["play","played","were playing","will play"], answer:2, explain:"過去進行形" },
+{ question:"She ___ never been to Osaka.", choices:["have","has","had","will"], answer:1, explain:"She → has been" },
+
+{ question:"We ___ math every Monday.", choices:["study","studied","will study","studying"], answer:0, explain:"every Monday → 現在形" },
+{ question:"He ___ home late last night.", choices:["comes","came","will come","coming"], answer:1, explain:"last night → 過去形" },
+{ question:"I ___ you next month.", choices:["visit","visited","will visit","visiting"], answer:2, explain:"next month → 未来形" },
+{ question:"She ___ dinner now.", choices:["cook","cooked","is cooking","will cook"], answer:2, explain:"now → 現在進行形" },
+{ question:"By 2030, they ___ built a new school.", choices:["will","will have","have","had"], answer:1, explain:"By 2030 → 未来完了" }
     
   ]
 };
@@ -549,6 +585,7 @@ console.log("カテゴリ別問題数", {
   modal: chapters.modal.length
 });
 console.log("合計問題数", Object.values(chapters).reduce((sum, arr) => sum + arr.length, 0));
+
 
 
 
