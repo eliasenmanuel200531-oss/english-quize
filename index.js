@@ -403,15 +403,23 @@ const nextCategoryBtn = document.getElementById("nextCategoryBtn");
 
 if (nextCategoryBtn) {
 
+  const order = ["be", "tense", "modal"];
+
+  const names = {
+    be: "be動詞",
+    tense: "時制",
+    modal: "助動詞"
+  };
+
+  let current = localStorage.getItem("selectedChapter") || "be";
+
+  let currentIndex = order.indexOf(current);
+
+  let next = order[(currentIndex + 1) % order.length];
+
+  nextCategoryBtn.textContent = `次は ${names[next]} クイズ`;
+
   nextCategoryBtn.addEventListener("click", () => {
-
-    const order = ["be", "tense", "modal"];
-
-    let current = localStorage.getItem("selectedChapter") || "be";
-
-    let currentIndex = order.indexOf(current);
-
-    let next = order[(currentIndex + 1) % order.length];
 
     localStorage.setItem("selectedChapter", next);
 
