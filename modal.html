@@ -1,9 +1,105 @@
-<h1>助動詞 練習問題</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>時制 練習問題100問｜英語クイズ</title>
+  <meta name="description" content="時制の練習問題を無料で解けます。現在形・過去形・未来形・進行形・現在完了をクイズで学習できます。">
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --text:#e8ecff;
+      --muted:#aab3d6;
+      --accent:#6ea8ff;
+    }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #070a14);
+      color: var(--text);
+    }
+    .wrap{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+    h1,h2{ margin: 8px 0 16px; }
+    p, li{ color: var(--muted); line-height:1.7; }
+    .card{
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      padding:16px;
+      margin-top:16px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(110,168,255,.18);
+      color: var(--text);
+      text-decoration:none;
+      cursor:pointer;
+    }
+    .btn:hover{
+      background: rgba(110,168,255,.26);
+    }
+    .links{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>時制 練習問題100問</h1>
+    <p>
+      時制は、英語で「いつのことか」を表す大事な文法です。
+      現在・過去・未来・進行形・現在完了までクイズで練習できます。
+    </p>
 
-<p>
-中学英語の助動詞クイズです。
-</p>
+    <div class="card">
+      <h2>時制とは？</h2>
+      <p>
+        動詞の形を変えることで、今のこと・昔のこと・これからのことを表します。
+        英文の意味を正しく理解するために必須の単元です。
+      </p>
+      <ul>
+        <li>I play soccer.（現在）</li>
+        <li>I played soccer yesterday.（過去）</li>
+        <li>I will play soccer tomorrow.（未来）</li>
+        <li>I am playing soccer now.（進行形）</li>
+        <li>I have played soccer before.（現在完了）</li>
+      </ul>
+    </div>
 
-<a href="./eigo.html?chapter=modal">
-助動詞クイズを始める
-</a>
+    <div class="card">
+      <h2>よく出るポイント</h2>
+      <ul>
+        <li>every day → 現在形</li>
+        <li>yesterday / last night → 過去形</li>
+        <li>tomorrow / next week → 未来形</li>
+        <li>now → 現在進行形</li>
+        <li>since / for / already / yet → 現在完了のヒント</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>クイズで練習する</h2>
+      <p>
+        このページの下のボタンから、時制の100問クイズに進めます。
+      </p>
+      <div class="links">
+        <a class="btn" href="eigo.html" onclick="localStorage.setItem('selectedChapter','modal')">時制クイズを解く</a>
+        <a class="btn" href="itiran.html">クイズ一覧へ</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
