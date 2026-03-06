@@ -129,7 +129,29 @@ const chapters = {
     { question:"I ___ never been to Osaka.", choices:["have","has","had","will have"], answer:0, explain:"I → have been" },
     { question:"We ___ studying English for two hours.", choices:["are","were","have been","will be"], answer:2, explain:"for + 時間 → have been" },
     { question:"The meeting ___ start at 10 a.m.", choices:["is","was","will","has"], answer:2, explain:"未来の予定 → will" },
-    { question:"By next year, I ___ graduate.", choices:["will","will have","have","had"], answer:1, explain:"By + 未来 → 未来完了" }
+    { question:"By next year, I ___ graduate.", choices:["will","will have","have","had"], answer:1, explain:"By + 未来 → 未来完了" },
+      // ===== 三単現（追加20問）=====
+  { question:"He ___ tennis on Sundays.", choices:["play","plays","played","playing"], answer:1, explain:"He → plays" },
+  { question:"She ___ to school by bus.", choices:["go","goes","went","going"], answer:1, explain:"She → goes" },
+  { question:"My father ___ dinner at 7.", choices:["eat","eats","ate","eating"], answer:1, explain:"三単現 → eats" },
+  { question:"Ken ___ TV every night.", choices:["watch","watches","watched","watching"], answer:1, explain:"watch → watches" },
+  { question:"Tom ___ English every day.", choices:["study","studies","studied","studying"], answer:1, explain:"study → studies（y→ies）" },
+  { question:"She ___ lunch at noon.", choices:["have","has","had","having"], answer:1, explain:"She → has" },
+  { question:"He ___ his homework after dinner.", choices:["do","does","did","doing"], answer:1, explain:"do → does" },
+  { question:"My sister ___ the piano well.", choices:["play","plays","played","playing"], answer:1, explain:"三単現 → plays" },
+  { question:"The dog ___ fast.", choices:["run","runs","ran","running"], answer:1, explain:"dog(It) → runs" },
+  { question:"She ___ coffee every morning.", choices:["drink","drinks","drank","drinking"], answer:1, explain:"三単現 → drinks" },
+
+  { question:"He ___ baseball after school.", choices:["like","likes","liked","liking"], answer:1, explain:"He → likes" },
+  { question:"My mother ___ a car.", choices:["have","has","had","having"], answer:1, explain:"mother(She) → has" },
+  { question:"Tom ___ to music at night.", choices:["listen","listens","listened","listening"], answer:1, explain:"listen → listens" },
+  { question:"She ___ her room every week.", choices:["clean","cleans","cleaned","cleaning"], answer:1, explain:"三単現 → cleans" },
+  { question:"He ___ early on weekdays.", choices:["get up","gets up","got up","getting up"], answer:1, explain:"He → gets up" },
+  { question:"My brother ___ in Tokyo.", choices:["live","lives","lived","living"], answer:1, explain:"live → lives" },
+  { question:"She ___ Japanese.", choices:["teach","teaches","taught","teaching"], answer:1, explain:"teach → teaches（es）" },
+  { question:"He ___ the window every day.", choices:["open","opens","opened","opening"], answer:1, explain:"open → opens" },
+  { question:"The student ___ questions.", choices:["ask","asks","asked","asking"], answer:1, explain:"student(He/She) → asks" },
+  { question:"She ___ to the library often.", choices:["go","goes","went","going"], answer:1, explain:"go → goes（es）" }
   ],
 
   modal: [
@@ -142,7 +164,32 @@ const chapters = {
     { question:"I ___ help you.", choices:["can","will","must","may"], answer:0, explain:"申し出 → can" },
     { question:"He ___ come tonight.", choices:["can","will","must","might"], answer:1, explain:"予定・意志 → will" },
     { question:"You ___ eat too much junk food.", choices:["can","will","must not","may"], answer:2, explain:"禁止 → must not" },
-    { question:"___ I open the window?", choices:["Can","Will","Must","Do"], answer:0, explain:"許可 → Can I ?" }
+    { question:"___ I open the window?", choices:["Can","Will","Must","Do"], answer:0, explain:"許可 → Can I ?" },
+      // ===== 時制（追加20問）=====
+  { question:"I ___ to school every day.", choices:["go","went","will go","going"], answer:0, explain:"every day → 現在形 go" },
+  { question:"I ___ to school yesterday.", choices:["go","went","will go","going"], answer:1, explain:"yesterday → 過去形 went" },
+  { question:"I ___ to school tomorrow.", choices:["go","went","will go","going"], answer:2, explain:"tomorrow → will go" },
+  { question:"She ___ TV now.", choices:["watch","watched","is watching","will watch"], answer:2, explain:"now → 現在進行形" },
+  { question:"They ___ dinner when I arrived.", choices:["eat","ate","were eating","will eat"], answer:2, explain:"when + 過去の途中 → 過去進行" },
+
+  { question:"He ___ already finished his work.", choices:["has","have","is","will"], answer:0, explain:"already → 現在完了 / He → has" },
+  { question:"I ___ never been to Osaka.", choices:["have","has","am","will"], answer:0, explain:"I → have been（現在完了）" },
+  { question:"We ___ studying for two hours.", choices:["are","were","have been","will be"], answer:2, explain:"for + 時間 → have been" },
+  { question:"The meeting ___ start at 10.", choices:["is","was","will","has"], answer:2, explain:"未来の予定 → will" },
+  { question:"By next year, I ___ graduate.", choices:["will","will have","have","had"], answer:1, explain:"By + 未来 → 未来完了" },
+
+  { question:"He ___ a book now.", choices:["reads","read","is reading","will read"], answer:2, explain:"now → is reading" },
+  { question:"She ___ lunch at 12 every day.", choices:["eat","eats","ate","will eat"], answer:1, explain:"every day → 現在形 / She → eats" },
+  { question:"We ___ in Tokyo last year.", choices:["live","lived","will live","living"], answer:1, explain:"last year → 過去形" },
+  { question:"I ___ you later.", choices:["call","called","will call","calling"], answer:2, explain:"later → will call" },
+  { question:"They ___ soccer at that time.", choices:["play","played","were playing","will play"], answer:2, explain:"at that time → 過去進行" },
+
+  { question:"He ___ in Japan since 2020.", choices:["lives","lived","has lived","will live"], answer:2, explain:"since → 現在完了（継続）" },
+  { question:"I ___ my homework yet.", choices:["didn't finish","haven't finished","don't finish","won't finish"], answer:1, explain:"yet → 現在完了（否定）" },
+  { question:"She ___ already ___ dinner.", choices:["has / eaten","have / ate","is / eat","will / ate"], answer:0, explain:"already → has eaten" },
+  { question:"We ___ to the station now.", choices:["go","went","are going","will go"], answer:2, explain:"now → are going" },
+  { question:"They ___ to Kyoto next week.", choices:["go","went","will go","are went"], answer:2, explain:"next week → will go" }
+    
   ]
 };
 
@@ -428,6 +475,7 @@ if (nextCategoryBtn) {
   });
 
 }
+
 
 
 
