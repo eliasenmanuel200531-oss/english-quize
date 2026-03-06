@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eliasenmanuel200531-oss.github.io/english-quize/sitemap.xml
