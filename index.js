@@ -398,6 +398,26 @@ if (isQuizPage) {
   // 初期開始
   startChapter(localStorage.getItem("selectedChapter") || "be");
 }
+const nextCategoryBtn = document.getElementById("nextCategoryBtn");
+
+if(nextCategoryBtn){
+
+nextCategoryBtn.addEventListener("click",()=>{
+
+const order = ["be","tense","modal"];
+
+let currentIndex = order.indexOf(currentChapter);
+
+let next = order[(currentIndex+1)%order.length];
+
+localStorage.setItem("selectedChapter",next);
+
+location.reload();
+
+});
+
+}
+
 
 
 
