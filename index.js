@@ -476,6 +476,42 @@ if (nextCategoryBtn) {
 
 }
 
+// ===== 問題数を自動表示 =====
+const chapterNames = {
+  be: "be動詞 / 一般動詞",
+  tense: "三人称単数現在",
+  modal: "時制"
+};
+
+// トップページのタイトル更新
+const mainTitle = document.getElementById("mainTitle");
+if (mainTitle) {
+  const total = Object.values(chapters).reduce((sum, arr) => sum + arr.length, 0);
+  mainTitle.textContent = `英語文法クイズ（${total}問）｜間違いだけ復習できる`;
+}
+
+// 一覧ページの件数表示
+const countBe = document.getElementById("count-be");
+const countTense = document.getElementById("count-tense");
+const countModal = document.getElementById("count-modal");
+
+if (countBe) {
+  countBe.textContent = `${chapters.be.length}問`;
+}
+if (countTense) {
+  countTense.textContent = `${chapters.tense.length}問`;
+}
+if (countModal) {
+  countModal.textContent = `${chapters.modal.length}問`;
+}
+
+// 開発用：コンソールで問題数確認
+console.log("カテゴリ別問題数", {
+  be: chapters.be.length,
+  tense: chapters.tense.length,
+  modal: chapters.modal.length
+});
+console.log("合計問題数", Object.values(chapters).reduce((sum, arr) => sum + arr.length, 0));
 
 
 
