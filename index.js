@@ -941,7 +941,7 @@ console.log("合計問題数", Object.values(chapters).reduce((sum, arr) => sum 
 
 function startDailyQuiz(){
 
-const chapters = ["be","tense","modal","progressive"];
+const chapters = ["be","tense","modal","progressive", "question_negative"];
 
 const random = chapters[Math.floor(Math.random()*chapters.length)];
 
@@ -970,6 +970,7 @@ function startWeakQuiz() {
   localStorage.setItem("selectedChapter", bestChapter);
   location.href = "eigo.html";
 }
+
 
 
 
