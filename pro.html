@@ -1,158 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Proにする</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proプラン｜英語文法クイズ</title>
+  <meta name="description" content="英語文法クイズのProプラン。間違えた問題だけ復習して、苦手を効率よく克服できます。">
   <style>
-  :root{
-    --bg:#0b1020;
-    --card:#111a33;
-    --text:#e8ecff;
-    --muted:#aab3d6;
-    --accent:#6ea8ff;
-    --danger:#ff6b6b;
-  }
-  body{
-    margin:0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    background: linear-gradient(180deg, var(--bg), #070a14);
-    color: var(--text);
-  }
-  .wrap{
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px 16px;
-  }
-  h1,h2{ margin: 8px 0 16px; }
-  p{ color: var(--muted); line-height:1.6; }
-
-  /* ボタン/リンクをボタン化 */
-  .btn, a.btn, button{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding: 12px 14px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,.12);
-    background: rgba(255,255,255,.06);
-    color: var(--text);
-    text-decoration:none;
-    cursor:pointer;
-    transition: transform .05s ease, background .2s ease;
-  }
-  .btn:hover, a.btn:hover, button:hover{
-    background: rgba(255,255,255,.10);
-  }
-  .btn:active, a.btn:active, button:active{
-    transform: translateY(1px);
-  }
-  .primary{
-    background: rgba(110,168,255,.18);
-    border-color: rgba(110,168,255,.35);
-  }
-  .primary:hover{ background: rgba(110,168,255,.26); }
-
-  /* カード */
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 12px;
-    margin-top: 14px;
-  }
-  .card{
-    background: rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.10);
-    border-radius:16px;
-    padding:14px;
-  }
-  .card small{ color: var(--muted); }
-
-  /* クイズ */
-  #question{
-    font-size: 20px;
-    margin-bottom: 14px;
-  }
-  .choices{
-    display:grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .choice{
-    width: 100%;
-    text-align:left;
-  }
-  #result{
-    margin-top: 12px;
-    font-weight: 700;
-  }
-  #explain{
-    margin-top: 10px;
-    padding: 12px;
-    border-radius: 12px;
-    background: rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.10);
-  }
-  .hidden{ display:none; }
-
-  /* フッターリンク */
-  .links{
-    margin-top: 18px;
-    display:flex;
-    gap:10px;
-    flex-wrap: wrap;
-  }
-</style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --text:#e8ecff;
+      --muted:#aab3d6;
+      --accent:#6ea8ff;
+      --line:rgba(255,255,255,.12);
+    }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #070a14);
+      color: var(--text);
+    }
+    .wrap{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+    h1,h2,h3{ margin:8px 0 16px; }
+    p, li{ color: var(--muted); line-height:1.7; }
+    .hero{
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      margin-bottom:16px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap:12px;
+      margin-top:12px;
+    }
+    .card{
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+    }
+    .price{
+      font-size:32px;
+      font-weight:700;
+      color:#fff;
+    }
+    .btn, button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      text-decoration:none;
+      cursor:pointer;
+      font-size:16px;
+    }
+    .btn.primary, button.primary{
+      background: rgba(110,168,255,.20);
+      border-color: rgba(110,168,255,.40);
+    }
+    .btn:hover, button:hover{
+      background: rgba(255,255,255,.12);
+    }
+    input{
+      width:min(420px,100%);
+      padding:12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      margin-top:8px;
+    }
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .small{
+      font-size:14px;
+      color:var(--muted);
+    }
+    #msg{
+      margin-top:12px;
+      font-weight:700;
+      color:#fff;
+    }
+  </style>
 </head>
 <body>
- <div class="wrap">
-  <h2>Pro（¥500/月）</h2>
-  <p>無料でも使えるけど、Proにすると「続けるほど強くなる」学習になります。</p>
+  <div class="wrap">
 
-  <div class="grid">
-    <div class="card">
-      <h3>Proでできること</h3>
-      <ul>
-        <li>間違えた問題が次回以降も残る（章別）</li>
-        <li>苦手だけを自動で復習できる</li>
-        <li>章別グラフを切り替えられる</li>
-      </ul>
+    <div class="hero">
+      <h1>Proプラン</h1>
+      <p>
+        ただ解くだけじゃなく、<strong style="color:#fff;">間違えた問題を残して復習</strong>できる学習モードです。
+        苦手を何度も解き直したい人向けです。
+      </p>
+      <div class="price">¥500 / 月</div>
+      <p class="small">まずはテスト用コードで動作確認できます。</p>
     </div>
-    <div class="card">
-      <h3>無料版</h3>
-      <ul>
-        <li>その場の復習はできる</li>
-        <li>でも、間違いは次回に残らない</li>
-      </ul>
-      <small>「毎回同じミスをする」人ほどProが効きます。</small>
+
+    <div class="grid">
+      <div class="card">
+        <h3>無料版</h3>
+        <ul>
+          <li>500問の英語クイズ</li>
+          <li>今日のクイズ</li>
+          <li>正答率グラフ</li>
+          <li>クイズを解くことはできる</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Pro版</h3>
+        <ul>
+          <li>間違えた問題を保存</li>
+          <li>「間違えた問題だけ解く」が使える</li>
+          <li>苦手を重点復習できる</li>
+          <li>継続学習しやすい</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h2>Proコードを入力</h2>
+      <p>テスト用コードを入力すると、このブラウザでProを有効化できます。</p>
+
+      <input id="code" type="text" placeholder="コードを入力">
+      <div class="links">
+        <button id="unlockBtn" class="primary">Proを有効化</button>
+        <button id="testBtn">テスト用コードを自動入力</button>
+        <button id="resetBtn">Proを解除</button>
+      </div>
+
+      <p id="msg"></p>
+    </div>
+
+    <div class="links">
+      <a class="btn primary" href="itiran.html">クイズ一覧へ</a>
+      <a class="btn" href="graph.html">グラフを見る</a>
+      <a class="btn" href="index.html">トップへ</a>
     </div>
   </div>
 
-  <p style="margin-top:14px;">購入後に届くコードを入力：</p>
-  <input id="code" placeholder="例: PRO-500" style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:#fff;width:min(420px,100%);" />
-  <button id="btn" class="btn primary">Proを有効化</button>
-
-  <p id="msg"></p>
-
-  <div class="links">
-    <a class="btn" href="itiran.html">章選択へ</a>
-    <a class="btn" href="graph.html">グラフへ</a>
-  </div>
-</div>
   <script>
-    const PRO_CODE = "PRO-500"; // index.jsと同じにする
+    const PRO_CODE = "P-8F3K-2Q9M";
     const msg = document.getElementById("msg");
+    const codeInput = document.getElementById("code");
 
-    document.getElementById("btn").addEventListener("click", () => {
-      const code = document.getElementById("code").value.trim();
+    function renderStatus() {
+      const isPro = localStorage.getItem("isPro") === "true";
+      if (isPro) {
+        msg.textContent = "現在このブラウザでは Pro が有効です。";
+      } else {
+        msg.textContent = "現在は無料版です。";
+      }
+    }
+
+    document.getElementById("unlockBtn").addEventListener("click", () => {
+      const code = codeInput.value.trim();
+
       if (code === PRO_CODE) {
         localStorage.setItem("isPro", "true");
-        msg.textContent = "Proを有効化しました！";
+        msg.textContent = "Proを有効化しました。クイズページで復習機能を試せます。";
       } else {
         msg.textContent = "コードが違います。";
       }
     });
+
+    document.getElementById("testBtn").addEventListener("click", () => {
+      codeInput.value = PRO_CODE;
+      msg.textContent = "テスト用コードを入力しました。『Proを有効化』を押してください。";
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      localStorage.removeItem("isPro");
+      msg.textContent = "Proを解除しました。";
+    });
+
+    renderStatus();
   </script>
 </body>
 </html>
