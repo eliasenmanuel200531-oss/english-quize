@@ -459,7 +459,92 @@ const chapters = {
 { question:"She ___ preparing for the test now.", choices:["am","is","are","be"], answer:1, explain:"She → is preparing" },
 { question:"We ___ walking to school now.", choices:["am","is","are","be"], answer:2, explain:"We → are walking" }
 
-]
+],
+question_negative: [
+
+/* ===== 疑問文 50問 ===== */
+
+{ question:"___ you play soccer?", choices:["Do","Does","Are","Is"], answer:0, explain:"you → Do you" },
+{ question:"___ he like coffee?", choices:["Do","Does","Are","Is"], answer:1, explain:"he → Does he" },
+{ question:"___ they study English?", choices:["Do","Does","Are","Is"], answer:0, explain:"they → Do they" },
+{ question:"___ she live in Tokyo?", choices:["Do","Does","Are","Is"], answer:1, explain:"she → Does she" },
+{ question:"___ we need help?", choices:["Do","Does","Are","Is"], answer:0, explain:"we → Do we" },
+
+{ question:"___ he play baseball?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he play" },
+{ question:"___ she watch TV?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she watch" },
+{ question:"___ they eat lunch at school?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they eat" },
+{ question:"___ Tom study math?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Tom = he → Does Tom" },
+{ question:"___ you understand English?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you" },
+
+{ question:"___ he go to school by bus?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he go" },
+{ question:"___ she read books?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she read" },
+{ question:"___ they play games?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they play" },
+{ question:"___ Ken like music?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Ken → Does Ken" },
+{ question:"___ you watch movies?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you watch" },
+
+{ question:"___ he eat breakfast?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he eat" },
+{ question:"___ she help you?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she help" },
+{ question:"___ they work here?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they work" },
+{ question:"___ Tom play tennis?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Tom → Does Tom play" },
+{ question:"___ you know Ken?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you know" },
+
+{ question:"___ he study English?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he study" },
+{ question:"___ she sing well?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she sing" },
+{ question:"___ they drive cars?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they drive" },
+{ question:"___ Ken play soccer?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Ken → Does Ken play" },
+{ question:"___ you like sushi?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you like" },
+
+{ question:"___ he read books?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he read" },
+{ question:"___ she drink coffee?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she drink" },
+{ question:"___ they study math?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they study" },
+{ question:"___ Tom live here?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Tom → Does Tom live" },
+{ question:"___ you eat breakfast?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you eat" },
+
+{ question:"___ he like pizza?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he like" },
+{ question:"___ she play tennis?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she play" },
+{ question:"___ they visit Kyoto?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they visit" },
+{ question:"___ Ken drive a car?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Ken → Does Ken drive" },
+{ question:"___ you enjoy music?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you enjoy" },
+
+{ question:"___ he cook dinner?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he cook" },
+{ question:"___ she clean the room?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she clean" },
+{ question:"___ they watch TV?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they watch" },
+{ question:"___ Tom study science?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Tom → Does Tom study" },
+{ question:"___ you play guitar?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you play" },
+
+/* ===== 否定文 50問 ===== */
+
+{ question:"I ___ like coffee.", choices:["do not","does not","not","am not"], answer:0, explain:"I → do not like" },
+{ question:"He ___ play soccer.", choices:["do not","does not","not","am not"], answer:1, explain:"he → does not play" },
+{ question:"She ___ watch TV.", choices:["do not","does not","not","am not"], answer:1, explain:"she → does not watch" },
+{ question:"They ___ eat meat.", choices:["do not","does not","not","am not"], answer:0, explain:"they → do not eat" },
+{ question:"We ___ need help.", choices:["do not","does not","not","am not"], answer:0, explain:"we → do not need" },
+
+{ question:"He ___ like pizza.", choices:["do not","does not","not","am not"], answer:1, explain:"he → does not like" },
+{ question:"She ___ drink coffee.", choices:["do not","does not","not","am not"], answer:1, explain:"she → does not drink" },
+{ question:"They ___ study math.", choices:["do not","does not","not","am not"], answer:0, explain:"they → do not study" },
+{ question:"Ken ___ play tennis.", choices:["do not","does not","not","am not"], answer:1, explain:"Ken → does not play" },
+{ question:"You ___ understand this.", choices:["do not","does not","not","am not"], answer:0, explain:"you → do not understand" },
+
+{ question:"He ___ watch movies.", choices:["do not","does not","not","am not"], answer:1, explain:"he → does not watch" },
+{ question:"She ___ eat sushi.", choices:["do not","does not","not","am not"], answer:1, explain:"she → does not eat" },
+{ question:"They ___ go to school.", choices:["do not","does not","not","am not"], answer:0, explain:"they → do not go" },
+{ question:"Tom ___ play baseball.", choices:["do not","does not","not","am not"], answer:1, explain:"Tom → does not play" },
+{ question:"You ___ need this.", choices:["do not","does not","not","am not"], answer:0, explain:"you → do not need" },
+
+{ question:"He ___ study English.", choices:["do not","does not","not","am not"], answer:1, explain:"he → does not study" },
+{ question:"She ___ drive a car.", choices:["do not","does not","not","am not"], answer:1, explain:"she → does not drive" },
+{ question:"They ___ like fish.", choices:["do not","does not","not","am not"], answer:0, explain:"they → do not like" },
+{ question:"Ken ___ eat breakfast.", choices:["do not","does not","not","am not"], answer:1, explain:"Ken → does not eat" },
+{ question:"You ___ watch TV.", choices:["do not","does not","not","am not"], answer:0, explain:"you → do not watch" },
+
+{ question:"He ___ read books.", choices:["do not","does not","not","am not"], answer:1, explain:"he → does not read" },
+{ question:"She ___ play piano.", choices:["do not","does not","not","am not"], answer:1, explain:"she → does not play" },
+{ question:"They ___ drink tea.", choices:["do not","does not","not","am not"], answer:0, explain:"they → do not drink" },
+{ question:"Tom ___ go home early.", choices:["do not","does not","not","am not"], answer:1, explain:"Tom → does not go" },
+{ question:"You ___ like math.", choices:["do not","does not","not","am not"], answer:0, explain:"you → do not like" }
+
+]  
 };
 
 // ===== Pro 設定 =====
@@ -766,6 +851,11 @@ const countBe = document.getElementById("count-be");
 const countTense = document.getElementById("count-tense");
 const countModal = document.getElementById("count-modal");
 const countProgressive = document.getElementById("count-progressive");
+const countQN = document.getElementById("count-question-negative");
+
+if (countQN) {
+countQN.textContent = `${chapters.question_negative.length}問`;
+}
 
 if (countProgressive) {
   countProgressive.textContent = `${chapters.progressive.length}問`;
@@ -799,6 +889,7 @@ localStorage.setItem("selectedChapter",random);
 location.href="eigo.html";
 
 }
+
 
 
 
