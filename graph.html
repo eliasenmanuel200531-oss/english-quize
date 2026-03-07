@@ -83,6 +83,8 @@
           <option value="be">be動詞</option>
           <option value="tense">時制</option>
           <option value="modal">助動詞</option>
+          <option value="progressive">進行形</option>
+          <option value="question_negative">疑問文 / 否定文</option>
         </select>
 
         <button id="clearBtn">履歴を削除</button>
@@ -110,6 +112,8 @@
       if (ch === "be") return "be動詞";
       if (ch === "tense") return "三人称単数現在";
       if (ch === "modal") return "時制";
+      if (ch === "progressive") return "進行形";
+  if (ch === "question_negative") return "疑問文 / 否定文";
       return ch || "-";
     };
 
@@ -237,4 +241,5 @@
   </script>
 </body>
 </html>
+
 
