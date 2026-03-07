@@ -864,13 +864,14 @@ const nextCategoryBtn = document.getElementById("nextCategoryBtn");
 
 if (nextCategoryBtn) {
 
-  const order = ["be", "tense", "modal","progressive"];
+  const order = ["be", "tense", "modal","progressive", "question_negative"];
 
   const names = {
     be: "be動詞",
     tense: "三人称単数現在",
     modal: "時制",
-    progressive: "進行形"
+    progressive: "進行形",
+    question_negative: "疑問文 / 否定文"
   };
 
   let current = localStorage.getItem("selectedChapter") || "be";
@@ -969,6 +970,7 @@ function startWeakQuiz() {
   localStorage.setItem("selectedChapter", bestChapter);
   location.href = "eigo.html";
 }
+
 
 
 
