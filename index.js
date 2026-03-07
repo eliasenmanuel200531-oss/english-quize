@@ -359,7 +359,34 @@ const chapters = {
 { question:"I ___ English for one hour.", choices:["study","studied","have studied","will study"], answer:2, explain:"for one hour → 現在完了" },
 { question:"By tomorrow, we ___ the work.", choices:["finish","finished","will finish","will have finished"], answer:3, explain:"By tomorrow → 未来完了" }
     
-  ]
+  ],
+  progressive: [
+
+{ question:"I ___ studying now.", choices:["am","is","are","be"], answer:0, explain:"I + am + 動詞ing" },
+{ question:"He ___ playing soccer now.", choices:["am","is","are","be"], answer:1, explain:"He + is + 動詞ing" },
+{ question:"They ___ watching TV now.", choices:["am","is","are","be"], answer:2, explain:"They + are + 動詞ing" },
+{ question:"She ___ reading a book now.", choices:["am","is","are","be"], answer:1, explain:"She + is + 動詞ing" },
+{ question:"We ___ eating lunch now.", choices:["am","is","are","be"], answer:2, explain:"We + are + 動詞ing" },
+
+{ question:"You ___ running fast now.", choices:["am","is","are","be"], answer:2, explain:"You + are + 動詞ing" },
+{ question:"It ___ raining now.", choices:["am","is","are","be"], answer:1, explain:"It + is + 動詞ing" },
+{ question:"I ___ doing my homework now.", choices:["am","is","are","be"], answer:0, explain:"I + am + 動詞ing" },
+{ question:"He ___ sleeping now.", choices:["am","is","are","be"], answer:1, explain:"He + is + 動詞ing" },
+{ question:"They ___ studying English now.", choices:["am","is","are","be"], answer:2, explain:"They + are + 動詞ing" },
+
+{ question:"She ___ cooking dinner now.", choices:["am","is","are","be"], answer:1, explain:"She + is + 動詞ing" },
+{ question:"We ___ cleaning the room now.", choices:["am","is","are","be"], answer:2, explain:"We + are + 動詞ing" },
+{ question:"Tom ___ playing the piano now.", choices:["am","is","are","be"], answer:1, explain:"Tom = he → is" },
+{ question:"My father ___ driving now.", choices:["am","is","are","be"], answer:1, explain:"My father = he → is" },
+{ question:"The children ___ playing in the park now.", choices:["am","is","are","be"], answer:2, explain:"children → are" },
+
+{ question:"I ___ not studying now.", choices:["am","is","are","be"], answer:0, explain:"I am not studying" },
+{ question:"He ___ not watching TV now.", choices:["am","is","are","be"], answer:1, explain:"He is not watching" },
+{ question:"They ___ not playing soccer now.", choices:["am","is","are","be"], answer:2, explain:"They are not playing" },
+{ question:"She ___ not reading now.", choices:["am","is","are","be"], answer:1, explain:"She is not reading" },
+{ question:"We ___ not eating now.", choices:["am","is","are","be"], answer:2, explain:"We are not eating" }
+
+]
 };
 
 // ===== Pro 設定 =====
@@ -619,12 +646,13 @@ const nextCategoryBtn = document.getElementById("nextCategoryBtn");
 
 if (nextCategoryBtn) {
 
-  const order = ["be", "tense", "modal"];
+  const order = ["be", "tense", "modal","progressive"];
 
   const names = {
     be: "be動詞",
     tense: "三人称単数現在",
-    modal: "時制"
+    modal: "時制",
+    progressive: "進行形"
   };
 
   let current = localStorage.getItem("selectedChapter") || "be";
@@ -663,7 +691,11 @@ if (mainTitle) {
 const countBe = document.getElementById("count-be");
 const countTense = document.getElementById("count-tense");
 const countModal = document.getElementById("count-modal");
+const countProgressive = document.getElementById("count-progressive");
 
+if (countProgressive) {
+  countProgressive.textContent = `${chapters.progressive.length}問`;
+}
 if (countBe) {
   countBe.textContent = `${chapters.be.length}問`;
 }
@@ -684,7 +716,7 @@ console.log("合計問題数", Object.values(chapters).reduce((sum, arr) => sum 
 
 function startDailyQuiz(){
 
-const chapters = ["be","tense","modal"];
+const chapters = ["be","tense","modal","progressive"];
 
 const random = chapters[Math.floor(Math.random()*chapters.length)];
 
@@ -693,6 +725,7 @@ localStorage.setItem("selectedChapter",random);
 location.href="eigo.html";
 
 }
+
 
 
 
