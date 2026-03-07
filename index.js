@@ -677,7 +677,8 @@ if (nextCategoryBtn) {
 const chapterNames = {
   be: "be動詞 / 一般動詞",
   tense: "三人称単数現在",
-  modal: "時制"
+  modal: "時制",
+  progressive: "進行形"
 };
 
 // トップページのタイトル更新
@@ -725,6 +726,7 @@ localStorage.setItem("selectedChapter",random);
 location.href="eigo.html";
 
 }
+
 
 
 
