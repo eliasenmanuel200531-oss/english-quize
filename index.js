@@ -457,7 +457,32 @@ const chapters = {
 { question:"He ___ building a robot now.", choices:["am","is","are","be"], answer:1, explain:"He → is building" },
 { question:"They ___ drawing pictures now.", choices:["am","is","are","be"], answer:2, explain:"They → are drawing" },
 { question:"She ___ preparing for the test now.", choices:["am","is","are","be"], answer:1, explain:"She → is preparing" },
-{ question:"We ___ walking to school now.", choices:["am","is","are","be"], answer:2, explain:"We → are walking" }
+{ question:"We ___ walking to school now.", choices:["am","is","are","be"], answer:2, explain:"We → are walking" },
+    // ===== 進行形 追加20問 =====
+
+{ question:"I ___ watching a movie now.", choices:["am","is","are","be"], answer:0, explain:"I → am watching" },
+{ question:"He ___ reading a book now.", choices:["am","is","are","be"], answer:1, explain:"He → is reading" },
+{ question:"They ___ playing basketball now.", choices:["am","is","are","be"], answer:2, explain:"They → are playing" },
+{ question:"She ___ writing a letter now.", choices:["am","is","are","be"], answer:1, explain:"She → is writing" },
+{ question:"We ___ studying science now.", choices:["am","is","are","be"], answer:2, explain:"We → are studying" },
+
+{ question:"You ___ listening carefully now.", choices:["am","is","are","be"], answer:2, explain:"You → are listening" },
+{ question:"It ___ getting dark now.", choices:["am","is","are","be"], answer:1, explain:"It → is getting" },
+{ question:"I ___ practicing piano now.", choices:["am","is","are","be"], answer:0, explain:"I → am practicing" },
+{ question:"He ___ fixing his bike now.", choices:["am","is","are","be"], answer:1, explain:"He → is fixing" },
+{ question:"They ___ preparing lunch now.", choices:["am","is","are","be"], answer:2, explain:"They → are preparing" },
+
+{ question:"She ___ washing clothes now.", choices:["am","is","are","be"], answer:1, explain:"She → is washing" },
+{ question:"We ___ walking home now.", choices:["am","is","are","be"], answer:2, explain:"We → are walking" },
+{ question:"Tom ___ watching TV now.", choices:["am","is","are","be"], answer:1, explain:"Tom → is watching" },
+{ question:"My sister ___ studying now.", choices:["am","is","are","be"], answer:1, explain:"sister → is studying" },
+{ question:"The students ___ talking now.", choices:["am","is","are","be"], answer:2, explain:"students → are talking" },
+
+{ question:"I ___ not sleeping now.", choices:["am","is","are","be"], answer:0, explain:"I am not sleeping" },
+{ question:"He ___ not running now.", choices:["am","is","are","be"], answer:1, explain:"He is not running" },
+{ question:"They ___ not working now.", choices:["am","is","are","be"], answer:2, explain:"They are not working" },
+{ question:"She ___ not singing now.", choices:["am","is","are","be"], answer:1, explain:"She is not singing" },
+{ question:"We ___ not waiting now.", choices:["am","is","are","be"], answer:2, explain:"We are not waiting" }
 
 ],
 question_negative: [
@@ -511,6 +536,41 @@ question_negative: [
 { question:"___ they watch TV?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they watch" },
 { question:"___ Tom study science?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Tom → Does Tom study" },
 { question:"___ you play guitar?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you play" },
+  // ===== 疑問文/否定文 追加35問 =====
+
+/* 疑問文 */
+
+{ question:"___ he read books?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he read" },
+{ question:"___ she like music?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she like" },
+{ question:"___ they watch TV?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they watch" },
+{ question:"___ Ken play soccer?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Ken → Does Ken play" },
+{ question:"___ you understand this?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you understand" },
+
+{ question:"___ he drive a car?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he drive" },
+{ question:"___ she cook dinner?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she cook" },
+{ question:"___ they visit Kyoto?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they visit" },
+{ question:"___ Tom study English?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Tom → Does Tom study" },
+{ question:"___ you drink coffee?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you drink" },
+
+{ question:"___ he help you?", choices:["Do","Does","Did","Doing"], answer:1, explain:"he → Does he help" },
+{ question:"___ she read novels?", choices:["Do","Does","Did","Doing"], answer:1, explain:"she → Does she read" },
+{ question:"___ they work here?", choices:["Do","Does","Did","Doing"], answer:0, explain:"they → Do they work" },
+{ question:"___ Ken eat breakfast?", choices:["Do","Does","Did","Doing"], answer:1, explain:"Ken → Does Ken eat" },
+{ question:"___ you like pizza?", choices:["Do","Does","Did","Doing"], answer:0, explain:"you → Do you like" },
+
+/* 否定文 */
+
+{ question:"He ___ like sushi.", choices:["do not","does not","not","am not"], answer:1, explain:"he → does not like" },
+{ question:"She ___ watch movies.", choices:["do not","does not","not","am not"], answer:1, explain:"she → does not watch" },
+{ question:"They ___ play soccer.", choices:["do not","does not","not","am not"], answer:0, explain:"they → do not play" },
+{ question:"Ken ___ drink coffee.", choices:["do not","does not","not","am not"], answer:1, explain:"Ken → does not drink" },
+{ question:"You ___ need help.", choices:["do not","does not","not","am not"], answer:0, explain:"you → do not need" },
+
+{ question:"He ___ read newspapers.", choices:["do not","does not","not","am not"], answer:1, explain:"he → does not read" },
+{ question:"She ___ play basketball.", choices:["do not","does not","not","am not"], answer:1, explain:"she → does not play" },
+{ question:"They ___ eat meat.", choices:["do not","does not","not","am not"], answer:0, explain:"they → do not eat" },
+{ question:"Tom ___ go home early.", choices:["do not","does not","not","am not"], answer:1, explain:"Tom → does not go" },
+{ question:"You ___ like math.", choices:["do not","does not","not","am not"], answer:0, explain:"you → do not like" },
 
 /* ===== 否定文 50問 ===== */
 
@@ -889,6 +949,7 @@ localStorage.setItem("selectedChapter",random);
 location.href="eigo.html";
 
 }
+
 
 
 
