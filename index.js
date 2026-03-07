@@ -949,6 +949,26 @@ localStorage.setItem("selectedChapter",random);
 location.href="eigo.html";
 
 }
+function startWeakQuiz() {
+  const targets = ["be", "tense", "modal", "progressive", "question_negative"];
+
+  let bestChapter = "be";
+  let maxWrong = -1;
+
+  targets.forEach((ch) => {
+    const raw = localStorage.getItem("wrong_" + ch);
+    const arr = raw ? JSON.parse(raw) : [];
+    const count = Array.isArray(arr) ? arr.length : 0;
+
+    if (count > maxWrong) {
+      maxWrong = count;
+      bestChapter = ch;
+    }
+  });
+
+  localStorage.setItem("selectedChapter", bestChapter);
+  location.href = "eigo.html";
+}
 
 
 
