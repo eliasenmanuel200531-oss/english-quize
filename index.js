@@ -384,7 +384,80 @@ const chapters = {
 { question:"He ___ not watching TV now.", choices:["am","is","are","be"], answer:1, explain:"He is not watching" },
 { question:"They ___ not playing soccer now.", choices:["am","is","are","be"], answer:2, explain:"They are not playing" },
 { question:"She ___ not reading now.", choices:["am","is","are","be"], answer:1, explain:"She is not reading" },
-{ question:"We ___ not eating now.", choices:["am","is","are","be"], answer:2, explain:"We are not eating" }
+{ question:"We ___ not eating now.", choices:["am","is","are","be"], answer:2, explain:"We are not eating" },
+    // ===== 進行形追加80問 =====
+
+{ question:"I ___ watching TV now.", choices:["am","is","are","be"], answer:0, explain:"I → am watching" },
+{ question:"He ___ eating lunch now.", choices:["am","is","are","be"], answer:1, explain:"He → is eating" },
+{ question:"They ___ playing soccer now.", choices:["am","is","are","be"], answer:2, explain:"They → are playing" },
+{ question:"She ___ studying English now.", choices:["am","is","are","be"], answer:1, explain:"She → is studying" },
+{ question:"We ___ listening to music now.", choices:["am","is","are","be"], answer:2, explain:"We → are listening" },
+
+{ question:"You ___ talking loudly now.", choices:["am","is","are","be"], answer:2, explain:"You → are talking" },
+{ question:"It ___ snowing now.", choices:["am","is","are","be"], answer:1, explain:"It → is snowing" },
+{ question:"I ___ writing an email now.", choices:["am","is","are","be"], answer:0, explain:"I → am writing" },
+{ question:"He ___ running in the park now.", choices:["am","is","are","be"], answer:1, explain:"He → is running" },
+{ question:"They ___ working now.", choices:["am","is","are","be"], answer:2, explain:"They → are working" },
+
+{ question:"She ___ cleaning her room now.", choices:["am","is","are","be"], answer:1, explain:"She → is cleaning" },
+{ question:"We ___ building a house now.", choices:["am","is","are","be"], answer:2, explain:"We → are building" },
+{ question:"Tom ___ studying math now.", choices:["am","is","are","be"], answer:1, explain:"Tom = he → is studying" },
+{ question:"My brother ___ playing games now.", choices:["am","is","are","be"], answer:1, explain:"brother → is playing" },
+{ question:"The students ___ reading now.", choices:["am","is","are","be"], answer:2, explain:"students → are reading" },
+
+{ question:"I ___ learning Japanese now.", choices:["am","is","are","be"], answer:0, explain:"I → am learning" },
+{ question:"He ___ drawing a picture now.", choices:["am","is","are","be"], answer:1, explain:"He → is drawing" },
+{ question:"They ___ dancing now.", choices:["am","is","are","be"], answer:2, explain:"They → are dancing" },
+{ question:"She ___ singing now.", choices:["am","is","are","be"], answer:1, explain:"She → is singing" },
+{ question:"We ___ cooking now.", choices:["am","is","are","be"], answer:2, explain:"We → are cooking" },
+
+{ question:"I ___ not watching TV now.", choices:["am","is","are","be"], answer:0, explain:"I am not watching" },
+{ question:"He ___ not eating now.", choices:["am","is","are","be"], answer:1, explain:"He is not eating" },
+{ question:"They ___ not playing now.", choices:["am","is","are","be"], answer:2, explain:"They are not playing" },
+{ question:"She ___ not studying now.", choices:["am","is","are","be"], answer:1, explain:"She is not studying" },
+{ question:"We ___ not talking now.", choices:["am","is","are","be"], answer:2, explain:"We are not talking" },
+
+{ question:"The dog ___ barking now.", choices:["am","is","are","be"], answer:1, explain:"dog → is barking" },
+{ question:"The boys ___ running now.", choices:["am","is","are","be"], answer:2, explain:"boys → are running" },
+{ question:"My mother ___ cooking now.", choices:["am","is","are","be"], answer:1, explain:"mother → is cooking" },
+{ question:"My friends ___ studying now.", choices:["am","is","are","be"], answer:2, explain:"friends → are studying" },
+{ question:"The teacher ___ writing now.", choices:["am","is","are","be"], answer:1, explain:"teacher → is writing" },
+
+{ question:"I ___ looking for my bag now.", choices:["am","is","are","be"], answer:0, explain:"I → am looking" },
+{ question:"He ___ fixing the car now.", choices:["am","is","are","be"], answer:1, explain:"He → is fixing" },
+{ question:"They ___ cleaning the park now.", choices:["am","is","are","be"], answer:2, explain:"They → are cleaning" },
+{ question:"She ___ washing dishes now.", choices:["am","is","are","be"], answer:1, explain:"She → is washing" },
+{ question:"We ___ painting the wall now.", choices:["am","is","are","be"], answer:2, explain:"We → are painting" },
+
+{ question:"I ___ drinking coffee now.", choices:["am","is","are","be"], answer:0, explain:"I → am drinking" },
+{ question:"He ___ taking a shower now.", choices:["am","is","are","be"], answer:1, explain:"He → is taking" },
+{ question:"They ___ making lunch now.", choices:["am","is","are","be"], answer:2, explain:"They → are making" },
+{ question:"She ___ playing the violin now.", choices:["am","is","are","be"], answer:1, explain:"She → is playing" },
+{ question:"We ___ reading books now.", choices:["am","is","are","be"], answer:2, explain:"We → are reading" },
+
+{ question:"I ___ checking my phone now.", choices:["am","is","are","be"], answer:0, explain:"I → am checking" },
+{ question:"He ___ learning English now.", choices:["am","is","are","be"], answer:1, explain:"He → is learning" },
+{ question:"They ___ working hard now.", choices:["am","is","are","be"], answer:2, explain:"They → are working" },
+{ question:"She ___ talking with her friend now.", choices:["am","is","are","be"], answer:1, explain:"She → is talking" },
+{ question:"We ___ waiting for the bus now.", choices:["am","is","are","be"], answer:2, explain:"We → are waiting" },
+
+{ question:"The baby ___ crying now.", choices:["am","is","are","be"], answer:1, explain:"baby → is crying" },
+{ question:"The players ___ training now.", choices:["am","is","are","be"], answer:2, explain:"players → are training" },
+{ question:"My father ___ reading the news now.", choices:["am","is","are","be"], answer:1, explain:"father → is reading" },
+{ question:"My sisters ___ studying now.", choices:["am","is","are","be"], answer:2, explain:"sisters → are studying" },
+{ question:"The cat ___ sleeping now.", choices:["am","is","are","be"], answer:1, explain:"cat → is sleeping" },
+
+{ question:"I ___ planning a trip now.", choices:["am","is","are","be"], answer:0, explain:"I → am planning" },
+{ question:"He ___ buying a ticket now.", choices:["am","is","are","be"], answer:1, explain:"He → is buying" },
+{ question:"They ___ preparing dinner now.", choices:["am","is","are","be"], answer:2, explain:"They → are preparing" },
+{ question:"She ___ sending a message now.", choices:["am","is","are","be"], answer:1, explain:"She → is sending" },
+{ question:"We ___ watching a movie now.", choices:["am","is","are","be"], answer:2, explain:"We → are watching" },
+
+{ question:"I ___ practicing English now.", choices:["am","is","are","be"], answer:0, explain:"I → am practicing" },
+{ question:"He ___ building a robot now.", choices:["am","is","are","be"], answer:1, explain:"He → is building" },
+{ question:"They ___ drawing pictures now.", choices:["am","is","are","be"], answer:2, explain:"They → are drawing" },
+{ question:"She ___ preparing for the test now.", choices:["am","is","are","be"], answer:1, explain:"She → is preparing" },
+{ question:"We ___ walking to school now.", choices:["am","is","are","be"], answer:2, explain:"We → are walking" }
 
 ]
 };
@@ -726,6 +799,7 @@ localStorage.setItem("selectedChapter",random);
 location.href="eigo.html";
 
 }
+
 
 
 
