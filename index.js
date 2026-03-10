@@ -631,6 +631,11 @@ const isQuizPage = !!document.getElementById("question");
 
 // ===== 成績保存 =====
 function saveRate(rate) {
+  function addWeakCount(ch) {
+  const key = "weakCount_" + ch;
+  const now = Number(localStorage.getItem(key) || "0");
+  localStorage.setItem(key, String(now + 1));
+}
   const history = JSON.parse(localStorage.getItem("rateHistory")) || [];
   history.push({
     chapter: currentChapter,
@@ -794,6 +799,7 @@ if (isQuizPage) {
         resultEl.textContent = "× 不正解";
         wrongSet.add(qi);
         saveWrong(currentChapter, wrongSet);
+        addWeakCount(currentChapter);
         btn.classList.add("wrong");
         // 正解も表示
         choiceBtns[q.answer].classList.add("correct");
@@ -970,6 +976,7 @@ function startWeakQuiz() {
   localStorage.setItem("selectedChapter", bestChapter);
   location.href = "eigo.html";
 }
+
 
 
 
