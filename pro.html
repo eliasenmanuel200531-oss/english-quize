@@ -179,11 +179,7 @@
       }
     });
 
-    document.getElementById("testBtn").addEventListener("click", () => {
-      codeInput.value = PRO_CODE;
-      msg.textContent = "テスト用コードを入力しました。『Proを有効化』を押してください。";
-    });
-
+    
     document.getElementById("resetBtn").addEventListener("click", () => {
       localStorage.removeItem("isPro");
       msg.textContent = "Proを解除しました。";
@@ -193,4 +189,5 @@
   </script>
 </body>
 </html>
+
 
