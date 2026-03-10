@@ -652,6 +652,12 @@ const loadWrong = (ch) =>
 const saveWrong = (ch, set) =>
   isPro() && localStorage.setItem(wrongKey(ch), JSON.stringify([...set]));
 const clearWrong = (ch) => localStorage.removeItem(wrongKey(ch));
+// 弱点カウント追加
+function addWeakCount(ch) {
+  const key = "weakCount_" + ch;
+  const now = Number(localStorage.getItem(key) || "0");
+  localStorage.setItem(key, String(now + 1));
+}
 
 // ===== 章選択（一覧ページ）=====
 if (isMenuPage) {
@@ -976,6 +982,7 @@ function startWeakQuiz() {
   localStorage.setItem("selectedChapter", bestChapter);
   location.href = "eigo.html";
 }
+
 
 
 
