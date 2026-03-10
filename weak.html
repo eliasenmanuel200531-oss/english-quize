@@ -1,84 +1,70 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-
 <meta charset="UTF-8">
-
 <title>あなたの弱点ランキング</title>
-
 <style>
-
 body{
-font-family:system-ui;
-background:#0b1020;
-color:white;
-padding:30px;
+  font-family:system-ui;
+  background:#0b1020;
+  color:white;
+  padding:30px;
 }
-
 .container{
-max-width:700px;
-margin:auto;
+  max-width:700px;
+  margin:auto;
 }
-
 .card{
-background:#111a33;
-padding:20px;
-border-radius:12px;
-margin-bottom:10px;
+  background:#111a33;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:10px;
 }
-
+a{
+  color:#6ea8ff;
+}
 </style>
-
 </head>
-
 <body>
 
 <div class="container">
-
-<h1>あなたの弱点ランキング</h1>
-
-<div id="list"></div>
-
-<a href="itiran.html">クイズに戻る</a>
-
+  <h1>あなたの弱点ランキング</h1>
+  <div id="list"></div>
+  <a href="itiran.html">クイズに戻る</a>
 </div>
 
-<script src="./index.js"></script>
-
 <script>
+const names = {
+  be: "be動詞",
+  tense: "三単現",
+  modal: "時制",
+  progressive: "進行形",
+  question_negative: "疑問文 / 否定文"
+};
 
+const chapters = ["be","tense","modal","progressive","question_negative"];
 const list = document.getElementById("list");
 
-const keys = Object.keys(localStorage)
-.filter(k=>k.startsWith("wrong_"));
-
-if(keys.length===0){
-
-list.innerHTML="<p>まだ弱点はありません</p>";
-
-}else{
-
-keys.forEach(k=>{
-
-let data = JSON.parse(localStorage.getItem(k));
-
-let chapter = k.replace("wrong_","");
-
-let div=document.createElement("div");
-
-div.className="card";
-
-div.innerHTML=`${chapter}：${data.length}問 苦手`;
-
-list.appendChild(div);
-
+const result = chapters.map(ch => {
+  return {
+    chapter: ch,
+    count: Number(localStorage.getItem("weakCount_" + ch) || "0")
+  };
 });
 
-}
+result.sort((a,b) => b.count - a.count);
 
+if (result.every(r => r.count === 0)) {
+  list.innerHTML = "<p>まだ弱点データはありません</p>";
+} else {
+  result.forEach((r, i) => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `${i + 1}位 ${names[r.chapter]}：${r.count}回ミス`;
+    list.appendChild(div);
+  });
+}
 </script>
 
 </body>
-
 </html>
